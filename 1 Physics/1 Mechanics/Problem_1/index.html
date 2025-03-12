@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 1 - Physics and Mathematics</title>
+<title>Investigating the Range as a Function of the Angle of Projection - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 1";
+        var mkdocs_page_name = "Investigating the Range as a Function of the Angle of Projection";
         var mkdocs_page_input_path = "1 Physics/1 Mechanics/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -46,8 +46,32 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal current">1 Mechanics</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Investigating the Range as a Function of the Angle of Projection</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#1-theoretical-foundation">1. Theoretical Foundation</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#governing-equations">Governing Equations</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#time-of-flight">Time of Flight</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#range">Range</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-analysis-of-the-range">2. Analysis of the Range</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-practical-applications">3. Practical Applications</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-implementation">4. Implementation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#discussion-on-limitations">Discussion on Limitations</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#rendering-and-running-in-vs-code">Rendering and Running in VS Code</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#output-notes">Output Notes</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
@@ -163,7 +187,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">1 Mechanics</li>
-<li class="breadcrumb-item active">Problem 1</li>
+<li class="breadcrumb-item active">Investigating the Range as a Function of the Angle of Projection</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -171,8 +195,127 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
-<p>hello</p>
+<h1 id="investigating-the-range-as-a-function-of-the-angle-of-projection">Investigating the Range as a Function of the Angle of Projection</h1>
+<h2 id="1-theoretical-foundation">1. Theoretical Foundation</h2>
+<p>Projectile motion is a classic physics problem where an object moves under gravity alone after an initial launch. We’ll derive the equations from Newton’s laws, assuming constant gravitational acceleration <span class="arithmatex">\(g\)</span>.</p>
+<h3 id="governing-equations">Governing Equations</h3>
+<p><em>Notes</em>: We start with a projectile launched from the origin <span class="arithmatex">\((x_0, y_0) = (0, 0)\)</span> with initial speed <span class="arithmatex">\(v_0\)</span> at angle <span class="arithmatex">\(\theta\)</span>. The velocity splits into horizontal and vertical components, and gravity only acts downward.</p>
+<ul>
+<li>Initial velocity components:</li>
+<li><span class="arithmatex">\(v_{x0} = v_0 \cos\theta\)</span> (horizontal, constant since no horizontal acceleration)</li>
+<li><span class="arithmatex">\(v_{y0} = v_0 \sin\theta\)</span> (vertical, affected by gravity)</li>
+<li>Acceleration:</li>
+<li><span class="arithmatex">\(a_x = 0\)</span> (no horizontal force)</li>
+<li><span class="arithmatex">\(a_y = -g\)</span> (gravity downward)</li>
+</ul>
+<p>Using kinematic equations <span class="arithmatex">\(x(t) = x_0 + v_{x0}t + \frac{1}{2}a_x t^2\)</span> and <span class="arithmatex">\(y(t) = y_0 + v_{y0}t + \frac{1}{2}a_y t^2\)</span>:
+- Horizontal: <span class="arithmatex">\(<span class="arithmatex">\(x(t) = v_0 \cos\theta \cdot t\)</span>\)</span>
+- Vertical: <span class="arithmatex">\(<span class="arithmatex">\(y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2\)</span>\)</span></p>
+<p><em>Notes</em>: These are the parametric equations of motion. The horizontal motion is linear (constant velocity), while the vertical motion is quadratic (parabolic due to gravity).</p>
+<h3 id="time-of-flight">Time of Flight</h3>
+<p><em>Notes</em>: The time of flight <span class="arithmatex">\(T\)</span> is when the projectile returns to <span class="arithmatex">\(y = 0\)</span> (assuming flat ground). Solve <span class="arithmatex">\(y(t) = 0\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(0 = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2\)</span>\)</span>
+Factor out <span class="arithmatex">\(t\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(t (v_0 \sin\theta - \frac{1}{2} g t) = 0\)</span>\)</span>
+Solutions:
+- <span class="arithmatex">\(t = 0\)</span> (launch time)
+- <span class="arithmatex">\(v_0 \sin\theta - \frac{1}{2} g t = 0 \implies t = \frac{2 v_0 \sin\theta}{g}\)</span></p>
+<p>Thus, time of flight: <span class="arithmatex">\(<span class="arithmatex">\(T = \frac{2 v_0 \sin\theta}{g}\)</span>\)</span></p>
+<p><em>Notes</em>: <span class="arithmatex">\(T\)</span> depends on <span class="arithmatex">\(v_0\)</span>, <span class="arithmatex">\(\theta\)</span>, and <span class="arithmatex">\(g\)</span>. At <span class="arithmatex">\(\theta = 0^\circ\)</span> or <span class="arithmatex">\(90^\circ\)</span>, <span class="arithmatex">\(T\)</span> adjusts accordingly (minimal or maximal vertical motion).</p>
+<h3 id="range">Range</h3>
+<p><em>Notes</em>: The range <span class="arithmatex">\(R\)</span> is the horizontal distance at <span class="arithmatex">\(t = T\)</span>. Substitute <span class="arithmatex">\(T\)</span> into <span class="arithmatex">\(x(t)\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(R = x(T) = v_0 \cos\theta \cdot \frac{2 v_0 \sin\theta}{g} = \frac{2 v_0^2 \sin\theta \cos\theta}{g}\)</span>\)</span>
+Use the trigonometric identity <span class="arithmatex">\(2 \sin\theta \cos\theta = \sin(2\theta)\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(R = \frac{v_0^2 \sin(2\theta)}{g}\)</span>\)</span></p>
+<p><em>Notes</em>: This is the key equation—a family of solutions parameterized by <span class="arithmatex">\(v_0\)</span> (initial speed), <span class="arithmatex">\(\theta\)</span> (angle), and <span class="arithmatex">\(g\)</span> (gravity). It’s symmetric about <span class="arithmatex">\(\theta = 45^\circ\)</span> due to <span class="arithmatex">\(\sin(2\theta)\)</span>.</p>
+<h2 id="2-analysis-of-the-range">2. Analysis of the Range</h2>
+<p><em>Notes</em>: Let’s explore how <span class="arithmatex">\(R\)</span> changes with its parameters.</p>
+<ul>
+<li><strong>Angle (<span class="arithmatex">\(\theta\)</span>)</strong>: Since <span class="arithmatex">\(\sin(2\theta)\)</span> ranges from 0 to 1:</li>
+<li>Maximum at <span class="arithmatex">\(2\theta = 90^\circ \implies \theta = 45^\circ\)</span>, where <span class="arithmatex">\(<span class="arithmatex">\(R_{\text{max}} = \frac{v_0^2}{g}\)</span>\)</span></li>
+<li>Zero at <span class="arithmatex">\(\theta = 0^\circ\)</span> or <span class="arithmatex">\(90^\circ\)</span> (no horizontal travel).</li>
+<li><strong>Velocity (<span class="arithmatex">\(v_0\)</span>)</strong>: <span class="arithmatex">\(R \propto v_0^2\)</span>, so doubling <span class="arithmatex">\(v_0\)</span> quadruples <span class="arithmatex">\(R\)</span>.</li>
+<li><strong>Gravity (<span class="arithmatex">\(g\)</span>)</strong>: <span class="arithmatex">\(R \propto \frac{1}{g}\)</span>, so lower gravity (e.g., Moon’s <span class="arithmatex">\(g = 1.62 \, \text{m/s}^2\)</span> vs. Earth’s <span class="arithmatex">\(9.81 \, \text{m/s}^2\)</span>) increases <span class="arithmatex">\(R\)</span>.</li>
+</ul>
+<p><em>Notes</em>: The <span class="arithmatex">\(45^\circ\)</span> optimum balances horizontal and vertical motion. Varying <span class="arithmatex">\(v_0\)</span> or <span class="arithmatex">\(g\)</span> scales the range, which we’ll visualize.</p>
+<h2 id="3-practical-applications">3. Practical Applications</h2>
+<p><em>Notes</em>: This ideal model applies broadly but can be adapted:
+- <strong>Uneven Terrain</strong>: If landing at height <span class="arithmatex">\(h\)</span>, solve <span class="arithmatex">\(y(t) = h\)</span>, adjusting <span class="arithmatex">\(T\)</span> and <span class="arithmatex">\(R\)</span>.
+- <strong>Air Resistance</strong>: Add a drag force like <span class="arithmatex">\(<span class="arithmatex">\(F_d = -k v^2\)</span>\)</span>, requiring numerical methods (e.g., Euler or Runge-Kutta).
+- <strong>Real-World Examples</strong>:
+  - Sports: A kicked soccer ball’s range depends on <span class="arithmatex">\(\theta\)</span> and <span class="arithmatex">\(v_0\)</span>, modified by spin.
+  - Engineering: Rocket trajectories optimize <span class="arithmatex">\(\theta\)</span> for distance or orbit.</p>
+<p><em>Notes</em>: These extensions show the model’s versatility beyond the ideal case.</p>
+<h2 id="4-implementation">4. Implementation</h2>
+<p><em>Notes</em>: We’ll simulate <span class="arithmatex">\(R\)</span> vs. <span class="arithmatex">\(\theta\)</span> using Python, comparing different <span class="arithmatex">\(v_0\)</span> and <span class="arithmatex">\(g\)</span> values.</p>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+g_earth = 9.81  # m/s^2 (Earth gravity)
+g_moon = 1.62   # m/s^2 (Moon gravity)
+v0 = 20.0       # m/s (initial speed)
+
+# Range function
+def range_projectile(v0, theta_deg, g):
+    theta = np.radians(theta_deg)  # Convert degrees to radians for sin/cos
+    return (v0**2 * np.sin(2 * theta)) / g  # Range formula
+
+# Angles from 0 to 90 degrees
+theta_deg = np.linspace(0, 90, 91)  # 91 points for smooth curve
+
+# Compute ranges for different conditions
+R_earth = range_projectile(v0, theta_deg, g_earth)          # Earth, base v0
+R_moon = range_projectile(v0, theta_deg, g_moon)            # Moon, base v0
+R_v0_double = range_projectile(2 * v0, theta_deg, g_earth)  # Earth, doubled v0
+
+# Plotting
+plt.figure(figsize=(10, 6))
+plt.plot(theta_deg, R_earth, label=f'Earth (g = {g_earth} m/s², v0 = {v0} m/s)')
+plt.plot(theta_deg, R_moon, label=f'Moon (g = {g_moon} m/s², v0 = {v0} m/s)')
+plt.plot(theta_deg, R_v0_double, label=f'Earth (g = {g_earth} m/s², v0 = {2*v0} m/s)')
+plt.xlabel('Angle of Projection (degrees)')
+plt.ylabel('Range (meters)')
+plt.title('Projectile Range vs. Angle of Projection')
+plt.grid(True)
+plt.legend()
+plt.show()
+
+# Find and print maximum range on Earth
+max_idx = np.argmax(R_earth)
+print(f"Max range on Earth: {R_earth[max_idx]:.2f} m at {theta_deg[max_idx]}°")
+</code></pre>
+<p><em>Notes on Code</em>:
+- <strong>Function</strong>: <code>range_projectile</code> implements <span class="arithmatex">\(R = \frac{v_0^2 \sin(2\theta)}{g}\)</span>, converting <span class="arithmatex">\(\theta\)</span> to radians.
+- <strong>Data</strong>: Computes <span class="arithmatex">\(R\)</span> for <span class="arithmatex">\(\theta = 0^\circ\)</span> to <span class="arithmatex">\(90^\circ\)</span> under three conditions:
+  1. Earth gravity, base speed.
+  2. Moon gravity, base speed (larger range due to lower <span class="arithmatex">\(g\)</span>).
+  3. Earth gravity, doubled speed (quadrupled range due to <span class="arithmatex">\(v_0^2\)</span>).
+- <strong>Plot</strong>: Visualizes the parabolic dependence on <span class="arithmatex">\(\theta\)</span>, peaking at <span class="arithmatex">\(45^\circ\)</span>.
+- <strong>Output</strong>: Confirms the max range numerically.</p>
+<h2 id="discussion-on-limitations">Discussion on Limitations</h2>
+<p><em>Notes</em>: The model assumes:
+- No air resistance (drag would reduce <span class="arithmatex">\(R\)</span>, especially at high <span class="arithmatex">\(v_0\)</span>).
+- Flat terrain (height changes alter <span class="arithmatex">\(T\)</span> and <span class="arithmatex">\(R\)</span>).
+- Constant <span class="arithmatex">\(g\)</span> (true near Earth’s surface, less so for high altitudes).</p>
+<p><em>Improvements</em>:
+- <strong>Drag</strong>: Add <span class="arithmatex">\(<span class="arithmatex">\(F_d = -k v^2\)</span>\)</span> and solve numerically.
+- <strong>Terrain</strong>: Adjust for <span class="arithmatex">\(y(t) = h\)</span>, modifying <span class="arithmatex">\(T\)</span>.
+- <strong>Wind</strong>: Include a horizontal velocity term.</p>
+<p><em>Notes</em>: These extensions make the model more realistic, connecting it to practical physics problems.</p>
+<hr/>
+<h3 id="rendering-and-running-in-vs-code">Rendering and Running in VS Code</h3>
+<ul>
+<li><strong>File</strong>: Save as <code>projectile_motion.md</code>.</li>
+<li><strong>Rendering</strong>: With "Markdown+Math" installed, preview (<code>Ctrl+Shift+V</code>) should show <span class="arithmatex">\(inline\)</span> and <span class="arithmatex">\(<span class="arithmatex">\(block\)</span>\)</span> equations nicely.</li>
+<li><strong>Code</strong>: Extract the Python to <code>projectile.py</code> or run in a Jupyter notebook (install "Jupyter" extension, create <code>.ipynb</code>, paste code into a cell).</li>
+<li><strong>Requirements</strong>: Install <code>numpy</code> and <code>matplotlib</code> (<code>pip install numpy matplotlib</code>).</li>
+</ul>
+<h3 id="output-notes">Output Notes</h3>
+<ul>
+<li>The plot will show three curves, with peaks at <span class="arithmatex">\(45^\circ\)</span>.</li>
+<li>Max range on Earth (at <span class="arithmatex">\(v_0 = 20 \, \text{m/s}\)</span>, <span class="arithmatex">\(g = 9.81 \, \text{m/s}^2\)</span>) is about 40.77 m, confirming <span class="arithmatex">\(R_{\text{max}} = \frac{v_0^2}{g} = \frac{400}{9.81}\)</span>.</li>
+</ul>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
