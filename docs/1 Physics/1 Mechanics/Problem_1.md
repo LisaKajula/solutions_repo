@@ -25,8 +25,8 @@ and
 
 $$y(t) = y_0 + v_{y0}t + \frac{1}{2}a_y t^2$$
 
-- Horizontal: $$x(t) = v_0 \cos\theta \cdot t$$
-- Vertical: $$y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2$$
+- Horizontal: $x(t) = v_0 \cos\theta \cdot t$
+- Vertical: $y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2$
 
 *Notes*: These are the parametric equations of motion. The horizontal motion is linear (constant velocity), while the vertical motion is quadratic (parabolic due to gravity).
 
