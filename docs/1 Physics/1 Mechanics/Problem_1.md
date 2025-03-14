@@ -11,13 +11,20 @@ Projectile motion is a classic physics problem where an object moves under gravi
 *Notes*: We start with a projectile launched from the origin $(x_0, y_0) = (0, 0)$ with initial speed $v_0$ at angle $\theta$. The velocity splits into horizontal and vertical components, and gravity only acts downward.
 
 - Initial velocity components:
-  - $v_{x0} = v_0 \cos\theta$ (horizontal, constant since no horizontal acceleration)
-  - $v_{y0} = v_0 \sin\theta$ (vertical, affected by gravity)
+    - $v_{x0} = v_0 \cos\theta$ (horizontal, constant since no horizontal acceleration)
+    - $v_{y0} = v_0 \sin\theta$ (vertical, affected by gravity)
 - Acceleration:
-  - $a_x = 0$ (no horizontal force)
-  - $a_y = -g$ (gravity downward)
+    - $a_x = 0$ (no horizontal force)
+    - $a_y = -g$ (gravity downward)
 
-Using kinematic equations $x(t) = x_0 + v_{x0}t + \frac{1}{2}a_x t^2$ and $y(t) = y_0 + v_{y0}t + \frac{1}{2}a_y t^2$:
+Using kinematic equations 
+
+$$x(t) = x_0 + v_{x0}t + \frac{1}{2}a_x t^2$$
+
+and
+
+$$y(t) = y_0 + v_{y0}t + \frac{1}{2}a_y t^2$$
+
 - Horizontal: $$x(t) = v_0 \cos\theta \cdot t$$
 - Vertical: $$y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2$$
 
