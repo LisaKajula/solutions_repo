@@ -178,16 +178,25 @@
 <h3 id="governing-equations">Governing Equations</h3>
 <p><em>Notes</em>: We start with a projectile launched from the origin <span class="arithmatex">\((x_0, y_0) = (0, 0)\)</span> with initial speed <span class="arithmatex">\(v_0\)</span> at angle <span class="arithmatex">\(\theta\)</span>. The velocity splits into horizontal and vertical components, and gravity only acts downward.</p>
 <ul>
-<li>Initial velocity components:</li>
+<li>Initial velocity components:<ul>
 <li><span class="arithmatex">\(v_{x0} = v_0 \cos\theta\)</span> (horizontal, constant since no horizontal acceleration)</li>
 <li><span class="arithmatex">\(v_{y0} = v_0 \sin\theta\)</span> (vertical, affected by gravity)</li>
-<li>Acceleration:</li>
+</ul>
+</li>
+<li>Acceleration:<ul>
 <li><span class="arithmatex">\(a_x = 0\)</span> (no horizontal force)</li>
 <li><span class="arithmatex">\(a_y = -g\)</span> (gravity downward)</li>
 </ul>
-<p>Using kinematic equations <span class="arithmatex">\(x(t) = x_0 + v_{x0}t + \frac{1}{2}a_x t^2\)</span> and <span class="arithmatex">\(y(t) = y_0 + v_{y0}t + \frac{1}{2}a_y t^2\)</span>:
-- Horizontal: <span class="arithmatex">\(<span class="arithmatex">\(x(t) = v_0 \cos\theta \cdot t\)</span>\)</span>
-- Vertical: <span class="arithmatex">\(<span class="arithmatex">\(y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2\)</span>\)</span></p>
+</li>
+</ul>
+<p>Using kinematic equations </p>
+<div class="arithmatex">\[x(t) = x_0 + v_{x0}t + \frac{1}{2}a_x t^2\]</div>
+<p>and</p>
+<div class="arithmatex">\[y(t) = y_0 + v_{y0}t + \frac{1}{2}a_y t^2\]</div>
+<ul>
+<li>Horizontal: <span class="arithmatex">\(<span class="arithmatex">\(x(t) = v_0 \cos\theta \cdot t\)</span>\)</span></li>
+<li>Vertical: <span class="arithmatex">\(<span class="arithmatex">\(y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2\)</span>\)</span></li>
+</ul>
 <p><em>Notes</em>: These are the parametric equations of motion. The horizontal motion is linear (constant velocity), while the vertical motion is quadratic (parabolic due to gravity).</p>
 <h3 id="time-of-flight">Time of Flight</h3>
 <p><em>Notes</em>: The time of flight <span class="arithmatex">\(T\)</span> is when the projectile returns to <span class="arithmatex">\(y = 0\)</span> (assuming flat ground). Solve <span class="arithmatex">\(y(t) = 0\)</span>:
