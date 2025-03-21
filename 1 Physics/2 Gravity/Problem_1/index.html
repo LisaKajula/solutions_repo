@@ -207,11 +207,19 @@ Rearrange:
 <p><em>Notes</em>: It’s foundational for orbit design (e.g., geostationary satellites) and exoplanet studies.</p>
 <h2 id="3-analysis-of-real-world-examples">3. Analysis of Real-World Examples</h2>
 <p><em>Notes</em>: Let’s verify with data:
-- <strong>Moon</strong>: <span class="arithmatex">\(T = 27.32\)</span> days = <span class="arithmatex">\(2.36 \times 10^6\)</span> s, <span class="arithmatex">\(r = 3.844 \times 10^8\)</span> m, <span class="arithmatex">\(G = 6.6743 \times 10^{-11}\)</span> m³/kg·s², Earth’s <span class="arithmatex">\(M \approx 5.972 \times 10^{24}\)</span> kg.
-  - <span class="arithmatex">\(T^2 = (2.36 \times 10^6)^2 = 5.57 \times 10^{12}\)</span> s²
-  - <span class="arithmatex">\(r^3 = (3.844 \times 10^8)^3 = 5.68 \times 10^{25}\)</span> m³
-  - Check: <span class="arithmatex">\(\frac{4\pi^2}{G M} = \frac{39.478}{6.6743 \times 10^{-11} \cdot 5.972 \times 10^{24}} \approx 9.91 \times 10^{-14}\)</span> s²/m³
-  - <span class="arithmatex">\(T^2 / r^3 = 5.57 \times 10^{12} / 5.68 \times 10^{25} \approx 9.8 \times 10^{-14}\)</span> s²/m³—matches closely!</p>
+- <strong>Moon</strong>: <span class="arithmatex">\(T = 27.32\)</span> days = <span class="arithmatex">\(2.36 \times 10^6\)</span> s, <span class="arithmatex">\(r = 3.844 \times 10^8\)</span> m, <span class="arithmatex">\(G = 6.6743 \times 10^{-11}\)</span> m³/kg·s², Earth’s <span class="arithmatex">\(M \approx 5.972 \times 10^{24}\)</span> kg.</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(T^2 = (2.36 \times 10^6)^2 = 5.57 \times 10^{12}\)</span> s²</p>
+</li>
+<li>
+<p><span class="arithmatex">\(r^3 = (3.844 \times 10^8)^3 = 5.68 \times 10^{25}\)</span> m³</p>
+</li>
+<li>
+<p>Check: <span class="arithmatex">\(\frac{4\pi^2}{G M} = \frac{39.478}{6.6743 \times 10^{-11} \cdot 5.972 \times 10^{24}} \approx 9.91 \times 10^{-14}\)</span> s²/m³</p>
+</li>
+<li><span class="arithmatex">\(T^2 / r^3 = 5.57 \times 10^{12} / 5.68 \times 10^{25} \approx 9.8 \times 10^{-14}\)</span> s²/m³—matches closely!</li>
+</ul>
 <p><em>Notes</em>: Small discrepancies reflect measurement precision or circular orbit assumption.</p>
 <h2 id="4-implementation">4. Implementation</h2>
 <p><em>Notes</em>: We’ll simulate circular orbits and plot <span class="arithmatex">\(T^2\)</span> vs. <span class="arithmatex">\(r^3\)</span> to verify the law.</p>
@@ -269,6 +277,7 @@ plt.show()
 # Verify with Moon data
 print(f"Moon: T = {T_moon/86400:.2f} days, r = {r_moon/1e6:.1f} Mm")
 </code></pre>
+<p><img alt="alt text" src="../image.png"/></p>
 <p><em>Notes on Code</em>:
 - <strong>Function</strong>: <code>orbital_period</code> computes <span class="arithmatex">\(T = \sqrt{\frac{4\pi^2 r^3}{G M}}\)</span>.
 - <strong>Data</strong>: <span class="arithmatex">\(r\)</span> spans realistic ranges; <span class="arithmatex">\(T\)</span> calculated for Earth and Sun.
