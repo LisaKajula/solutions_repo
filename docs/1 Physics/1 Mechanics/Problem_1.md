@@ -25,8 +25,14 @@ and
 
 $$y(t) = y_0 + v_{y0}t + \frac{1}{2}a_y t^2$$
 
-- Horizontal: $x(t) = v_0 \cos\theta \cdot t$
-- Vertical: $y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2$
+
+
+- Horizontal: 
+$x(t) = v_0 \cos\theta \cdot t$
+
+
+- Vertical:
+   $y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2$
 
 *Notes*: These are the parametric equations of motion. The horizontal motion is linear (constant velocity), while the vertical motion is quadratic (parabolic due to gravity).
 
@@ -37,6 +43,7 @@ Factor out $t$:
 $$t (v_0 \sin\theta - \frac{1}{2} g t) = 0$$
 Solutions:
 - $t = 0$ (launch time)
+
 - $v_0 \sin\theta - \frac{1}{2} g t = 0 \implies t = \frac{2 v_0 \sin\theta}{g}$
 
 Thus, time of flight: $$T = \frac{2 v_0 \sin\theta}{g}$$
@@ -58,6 +65,7 @@ $$R = \frac{v_0^2 \sin(2\theta)}{g}$$
 - **Angle ($\theta$)**: Since $\sin(2\theta)$ ranges from 0 to 1:
   - Maximum at $2\theta = 90^\circ \implies \theta = 45^\circ$, where $$R_{\text{max}} = \frac{v_0^2}{g}$$
   - Zero at $\theta = 0^\circ$ or $90^\circ$ (no horizontal travel).
+
 - **Velocity ($v_0$)**: $R \propto v_0^2$, so doubling $v_0$ quadruples $R$.
 - **Gravity ($g$)**: $R \propto \frac{1}{g}$, so lower gravity (e.g., Moon’s $g = 1.62 \, \text{m/s}^2$ vs. Earth’s $9.81 \, \text{m/s}^2$) increases $R$.
 
@@ -110,12 +118,20 @@ plt.ylabel('Range (meters)')
 plt.title('Projectile Range vs. Angle of Projection')
 plt.grid(True)
 plt.legend()
+
+# Save the graph as an image
+plt.savefig("projectile_graph.png", dpi=300)  # Saves as a high-quality image
+
+# Show the graph
 plt.show()
 
 # Find and print maximum range on Earth
 max_idx = np.argmax(R_earth)
 print(f"Max range on Earth: {R_earth[max_idx]:.2f} m at {theta_deg[max_idx]}°")
+
 ```
+![alt text](image.png)
+
 
 *Notes on Code*:
 - **Function**: `range_projectile` implements $R = \frac{v_0^2 \sin(2\theta)}{g}$, converting $\theta$ to radians.
