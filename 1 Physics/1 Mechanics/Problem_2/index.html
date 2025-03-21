@@ -186,17 +186,23 @@ Where:
 <p>Divide by <span class="arithmatex">\(I = m l^2\)</span>:
 <span class="arithmatex">\(<span class="arithmatex">\(\frac{d^2\theta}{dt^2} = -\frac{g}{l} \sin\theta - \frac{b}{m l^2} \frac{d\theta}{dt} + \frac{F_0}{m l^2} \cos(\omega t)\)</span>\)</span>
 Define:
-- <span class="arithmatex">\(\omega_0 = \sqrt{\frac{g}{l}}\)</span> (natural frequency),
-- <span class="arithmatex">\(\beta = \frac{b}{2 m l^2}\)</span> (damping constant),
-- <span class="arithmatex">\(A = \frac{F_0}{m l^2}\)</span> (driving amplitude per unit moment).</p>
+- <span class="arithmatex">\(\omega_0 = \sqrt{\frac{g}{l}}\)</span> (natural frequency),</p>
+<ul>
+<li><span class="arithmatex">\(\beta = \frac{b}{2 m l^2}\)</span> (damping constant),</li>
+<li><span class="arithmatex">\(A = \frac{F_0}{m l^2}\)</span> (driving amplitude per unit moment).</li>
+</ul>
 <p>The standard form becomes:
 <span class="arithmatex">\(<span class="arithmatex">\(\frac{d^2\theta}{dt^2} + 2\beta \frac{d\theta}{dt} + \omega_0^2 \sin\theta = A \cos(\omega t)\)</span>\)</span></p>
 <p><em>Notes</em>: This is a nonlinear ODE due to <span class="arithmatex">\(\sin\theta\)</span>. It reduces to a damped driven harmonic oscillator for small <span class="arithmatex">\(\theta\)</span>.</p>
 <h3 id="small-angle-approximation">Small-Angle Approximation</h3>
-<p><em>Notes</em>: For small <span class="arithmatex">\(\theta\)</span>, <span class="arithmatex">\(\sin\theta \approx \theta\)</span>, simplifying the equation to:
+<p><em>Notes</em>: For small <span class="arithmatex">\(\theta\)</span>, <span class="arithmatex">\(\sin\theta \approx \theta\)</span>,</p>
+<p>simplifying the equation to:
 <span class="arithmatex">\(<span class="arithmatex">\(\frac{d^2\theta}{dt^2} + 2\beta \frac{d\theta}{dt} + \omega_0^2 \theta = A \cos(\omega t)\)</span>\)</span>
 This is a linear, second-order ODE. The solution has:
-- <strong>Homogeneous part</strong>: Damped oscillator, <span class="arithmatex">\(\theta_h(t) = e^{-\beta t} (C_1 \cos(\omega_d t) + C_2 \sin(\omega_d t))\)</span>, where <span class="arithmatex">\(\omega_d = \sqrt{\omega_0^2 - \beta^2}\)</span> (underdamped case, <span class="arithmatex">\(\beta &lt; \omega_0\)</span>).
+- <strong>Homogeneous part</strong>:</p>
+<p>Damped oscillator,<span class="arithmatex">\(\theta_h(t) = e^{-\beta t} (C_1 \cos
+ (\omega_d t) + C_2 \sin(\omega_d t))\)</span>,</p>
+<p>where <span class="arithmatex">\(\omega_d = \sqrt{\omega_0^2 - \beta^2}\)</span> (underdamped case, <span class="arithmatex">\(\beta &lt; \omega_0\)</span>).
 - <strong>Particular part</strong>: Steady-state oscillation, <span class="arithmatex">\(\theta_p(t) = B \cos(\omega t - \phi)\)</span>, where amplitude <span class="arithmatex">\(B = \frac{A}{\sqrt{(\omega_0^2 - \omega^2)^2 + (2\beta\omega)^2}}\)</span> and phase <span class="arithmatex">\(\phi = \tan^{-1}\left(\frac{2\beta\omega}{\omega_0^2 - \omega^2}\right)\)</span>.</p>
 <p><em>Notes</em>: The full solution is <span class="arithmatex">\(\theta(t) = \theta_h + \theta_p\)</span>, with transients decaying, leaving the driven oscillation.</p>
 <h3 id="resonance">Resonance</h3>
