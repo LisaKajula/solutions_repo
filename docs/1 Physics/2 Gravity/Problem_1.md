@@ -47,8 +47,12 @@ $$T^2 = \frac{4\pi^2}{G M} r^3$$
 
 *Notes*: Let’s verify with data:
 - **Moon**: $T = 27.32$ days = $2.36 \times 10^6$ s, $r = 3.844 \times 10^8$ m, $G = 6.6743 \times 10^{-11}$ m³/kg·s², Earth’s $M \approx 5.972 \times 10^{24}$ kg.
+
+
   - $T^2 = (2.36 \times 10^6)^2 = 5.57 \times 10^{12}$ s²
+
   - $r^3 = (3.844 \times 10^8)^3 = 5.68 \times 10^{25}$ m³
+  
   - Check: $\frac{4\pi^2}{G M} = \frac{39.478}{6.6743 \times 10^{-11} \cdot 5.972 \times 10^{24}} \approx 9.91 \times 10^{-14}$ s²/m³
   - $T^2 / r^3 = 5.57 \times 10^{12} / 5.68 \times 10^{25} \approx 9.8 \times 10^{-14}$ s²/m³—matches closely!
 
@@ -113,6 +117,7 @@ plt.show()
 # Verify with Moon data
 print(f"Moon: T = {T_moon/86400:.2f} days, r = {r_moon/1e6:.1f} Mm")
 ```
+![alt text](image.png)
 
 *Notes on Code*:
 - **Function**: `orbital_period` computes $T = \sqrt{\frac{4\pi^2 r^3}{G M}}$.
