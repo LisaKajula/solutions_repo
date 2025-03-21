@@ -20,6 +20,7 @@ Divide by $I = m l^2$:
 $$\frac{d^2\theta}{dt^2} = -\frac{g}{l} \sin\theta - \frac{b}{m l^2} \frac{d\theta}{dt} + \frac{F_0}{m l^2} \cos(\omega t)$$
 Define:
 - $\omega_0 = \sqrt{\frac{g}{l}}$ (natural frequency),
+
 - $\beta = \frac{b}{2 m l^2}$ (damping constant),
 - $A = \frac{F_0}{m l^2}$ (driving amplitude per unit moment).
 
@@ -29,10 +30,17 @@ $$\frac{d^2\theta}{dt^2} + 2\beta \frac{d\theta}{dt} + \omega_0^2 \sin\theta = A
 *Notes*: This is a nonlinear ODE due to $\sin\theta$. It reduces to a damped driven harmonic oscillator for small $\theta$.
 
 ### Small-Angle Approximation
-*Notes*: For small $\theta$, $\sin\theta \approx \theta$, simplifying the equation to:
+*Notes*: For small $\theta$, $\sin\theta \approx \theta$,
+
+ simplifying the equation to:
 $$\frac{d^2\theta}{dt^2} + 2\beta \frac{d\theta}{dt} + \omega_0^2 \theta = A \cos(\omega t)$$
 This is a linear, second-order ODE. The solution has:
-- **Homogeneous part**: Damped oscillator, $\theta_h(t) = e^{-\beta t} (C_1 \cos(\omega_d t) + C_2 \sin(\omega_d t))$, where $\omega_d = \sqrt{\omega_0^2 - \beta^2}$ (underdamped case, $\beta < \omega_0$).
+- **Homogeneous part**:
+
+ Damped oscillator,$\theta_h(t) = e^{-\beta t} (C_1 \cos
+ (\omega_d t) + C_2 \sin(\omega_d t))$,
+ 
+  where $\omega_d = \sqrt{\omega_0^2 - \beta^2}$ (underdamped case, $\beta < \omega_0$).
 - **Particular part**: Steady-state oscillation, $\theta_p(t) = B \cos(\omega t - \phi)$, where amplitude $B = \frac{A}{\sqrt{(\omega_0^2 - \omega^2)^2 + (2\beta\omega)^2}}$ and phase $\phi = \tan^{-1}\left(\frac{2\beta\omega}{\omega_0^2 - \omega^2}\right)$.
 
 *Notes*: The full solution is $\theta(t) = \theta_h + \theta_p$, with transients decaying, leaving the driven oscillation.
