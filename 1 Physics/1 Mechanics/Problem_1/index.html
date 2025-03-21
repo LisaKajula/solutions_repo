@@ -194,8 +194,14 @@
 <p>and</p>
 <div class="arithmatex">\[y(t) = y_0 + v_{y0}t + \frac{1}{2}a_y t^2\]</div>
 <ul>
-<li>Horizontal: <span class="arithmatex">\(x(t) = v_0 \cos\theta \cdot t\)</span></li>
-<li>Vertical: <span class="arithmatex">\(y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2\)</span></li>
+<li>
+<p>Horizontal: 
+<span class="arithmatex">\(x(t) = v_0 \cos\theta \cdot t\)</span></p>
+</li>
+<li>
+<p>Vertical:
+   <span class="arithmatex">\(y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2\)</span></p>
+</li>
 </ul>
 <p><em>Notes</em>: These are the parametric equations of motion. The horizontal motion is linear (constant velocity), while the vertical motion is quadratic (parabolic due to gravity).</p>
 <h3 id="time-of-flight">Time of Flight</h3>
@@ -204,8 +210,10 @@
 Factor out <span class="arithmatex">\(t\)</span>:
 <span class="arithmatex">\(<span class="arithmatex">\(t (v_0 \sin\theta - \frac{1}{2} g t) = 0\)</span>\)</span>
 Solutions:
-- <span class="arithmatex">\(t = 0\)</span> (launch time)
-- <span class="arithmatex">\(v_0 \sin\theta - \frac{1}{2} g t = 0 \implies t = \frac{2 v_0 \sin\theta}{g}\)</span></p>
+- <span class="arithmatex">\(t = 0\)</span> (launch time)</p>
+<ul>
+<li><span class="arithmatex">\(v_0 \sin\theta - \frac{1}{2} g t = 0 \implies t = \frac{2 v_0 \sin\theta}{g}\)</span></li>
+</ul>
 <p>Thus, time of flight: <span class="arithmatex">\(<span class="arithmatex">\(T = \frac{2 v_0 \sin\theta}{g}\)</span>\)</span></p>
 <p><em>Notes</em>: <span class="arithmatex">\(T\)</span> depends on <span class="arithmatex">\(v_0\)</span>, <span class="arithmatex">\(\theta\)</span>, and <span class="arithmatex">\(g\)</span>. At <span class="arithmatex">\(\theta = 0^\circ\)</span> or <span class="arithmatex">\(90^\circ\)</span>, <span class="arithmatex">\(T\)</span> adjusts accordingly (minimal or maximal vertical motion).</p>
 <h3 id="range">Range</h3>
@@ -219,8 +227,12 @@ Use the trigonometric identity <span class="arithmatex">\(2 \sin\theta \cos\thet
 <ul>
 <li><strong>Angle (<span class="arithmatex">\(\theta\)</span>)</strong>: Since <span class="arithmatex">\(\sin(2\theta)\)</span> ranges from 0 to 1:</li>
 <li>Maximum at <span class="arithmatex">\(2\theta = 90^\circ \implies \theta = 45^\circ\)</span>, where <span class="arithmatex">\(<span class="arithmatex">\(R_{\text{max}} = \frac{v_0^2}{g}\)</span>\)</span></li>
-<li>Zero at <span class="arithmatex">\(\theta = 0^\circ\)</span> or <span class="arithmatex">\(90^\circ\)</span> (no horizontal travel).</li>
-<li><strong>Velocity (<span class="arithmatex">\(v_0\)</span>)</strong>: <span class="arithmatex">\(R \propto v_0^2\)</span>, so doubling <span class="arithmatex">\(v_0\)</span> quadruples <span class="arithmatex">\(R\)</span>.</li>
+<li>
+<p>Zero at <span class="arithmatex">\(\theta = 0^\circ\)</span> or <span class="arithmatex">\(90^\circ\)</span> (no horizontal travel).</p>
+</li>
+<li>
+<p><strong>Velocity (<span class="arithmatex">\(v_0\)</span>)</strong>: <span class="arithmatex">\(R \propto v_0^2\)</span>, so doubling <span class="arithmatex">\(v_0\)</span> quadruples <span class="arithmatex">\(R\)</span>.</p>
+</li>
 <li><strong>Gravity (<span class="arithmatex">\(g\)</span>)</strong>: <span class="arithmatex">\(R \propto \frac{1}{g}\)</span>, so lower gravity (e.g., Moon’s <span class="arithmatex">\(g = 1.62 \, \text{m/s}^2\)</span> vs. Earth’s <span class="arithmatex">\(9.81 \, \text{m/s}^2\)</span>) increases <span class="arithmatex">\(R\)</span>.</li>
 </ul>
 <p><em>Notes</em>: The <span class="arithmatex">\(45^\circ\)</span> optimum balances horizontal and vertical motion. Varying <span class="arithmatex">\(v_0\)</span> or <span class="arithmatex">\(g\)</span> scales the range, which we’ll visualize.</p>
@@ -265,12 +277,19 @@ plt.ylabel('Range (meters)')
 plt.title('Projectile Range vs. Angle of Projection')
 plt.grid(True)
 plt.legend()
+
+# Save the graph as an image
+plt.savefig("projectile_graph.png", dpi=300)  # Saves as a high-quality image
+
+# Show the graph
 plt.show()
 
 # Find and print maximum range on Earth
 max_idx = np.argmax(R_earth)
 print(f"Max range on Earth: {R_earth[max_idx]:.2f} m at {theta_deg[max_idx]}°")
+
 </code></pre>
+<p><img alt="alt text" src="../image.png"/></p>
 <p><em>Notes on Code</em>:
 - <strong>Function</strong>: <code>range_projectile</code> implements <span class="arithmatex">\(R = \frac{v_0^2 \sin(2\theta)}{g}\)</span>, converting <span class="arithmatex">\(\theta\)</span> to radians.
 - <strong>Data</strong>: Computes <span class="arithmatex">\(R\)</span> for <span class="arithmatex">\(\theta = 0^\circ\)</span> to <span class="arithmatex">\(90^\circ\)</span> under three conditions:
