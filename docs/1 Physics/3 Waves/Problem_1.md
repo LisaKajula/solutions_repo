@@ -6,7 +6,9 @@
 
 *Notes*: We’re tasked with analyzing the interference patterns created by circular waves on a water surface, emitted from point sources at the vertices of a regular polygon. Let’s break this down step by step.
 
-The wave from a single point source at position $(x_s, y_s)$ is given by the Single Disturbance equation:
+The wave from a single point source at position
+ $(x_s, y_s)$ 
+ is given by the Single Disturbance equation:
 
 
 $h(x, y, t) = A \cos(k r - \omega t + \phi)$
@@ -55,20 +57,20 @@ Let’s set $a = 1$ meter, so the vertices are at $(1, 1)$, $(1, -1)$, $(-1, -1)
 *Notes*: Each source emits a wave of the form $h_i(x, y, t) = A \cos(k r_i - \omega t)$, where $r_i$ is the distance from source $i$ to point $(x, y)$.
 
 - **Source 1** at $(1, 1)$:
-  $$r_1 = \sqrt{(x - 1)^2 + (y - 1)^2}$$
-  $$h_1(x, y, t) = A \cos(k r_1 - \omega t)$$
+  $r_1 = \sqrt{(x - 1)^2 + (y - 1)^2}$
+  $h_1(x, y, t) = A \cos(k r_1 - \omega t)$
 
 - **Source 2** at $(1, -1)$:
-  $$r_2 = \sqrt{(x - 1)^2 + (y + 1)^2}$$
-  $$h_2(x, y, t) = A \cos(k r_2 - \omega t)$$
+  $r_2 = \sqrt{(x - 1)^2 + (y + 1)^2}$
+  $h_2(x, y, t) = A \cos(k r_2 - \omega t)$
 
 - **Source 3** at $(-1, -1)$:
-  $$r_3 = \sqrt{(x + 1)^2 + (y + 1)^2}$$
-  $$h_3(x, y, t) = A \cos(k r_3 - \omega t)$$
+  $r_3 = \sqrt{(x + 1)^2 + (y + 1)^2}$
+  $h_3(x, y, t) = A \cos(k r_3 - \omega t)$
 
 - **Source 4** at $(-1, 1)$:
-  $$r_4 = \sqrt{(x + 1)^2 + (y - 1)^2}$$
-  $$h_4(x, y, t) = A \cos(k r_4 - \omega t)$$
+  $r_4 = \sqrt{(x + 1)^2 + (y - 1)^2}$
+  $h_4(x, y, t) = A \cos(k r_4 - \omega t)$
 
 *Notes*: All waves have the same amplitude $A$, wave number $k$, and angular frequency $\omega$, since the sources are identical and coherent.
 
@@ -76,13 +78,18 @@ Let’s set $a = 1$ meter, so the vertices are at $(1, 1)$, $(1, -1)$, $(-1, -1)
 
 *Notes*: The total displacement at any point $(x, y)$ and time $t$ is the sum of the displacements from all sources (principle of superposition):
 
+
 $h(x, y, t) = \sum_{i=1}^N h_i(x, y, t)$
+
 
 For our four sources:
 $h(x, y, t) = h_1 + h_2 + h_3 + h_4$
 
 
+
 $h(x, y, t) = A \left[ \cos(k r_1 - \omega t) + \cos(k r_2 - \omega t) + \cos(k r_3 - \omega t) + \cos(k r_4 - \omega t) \right]$
+
+
 
 
 *Notes*: This equation gives the combined wave displacement. The interference pattern depends on the differences in $r_i$, which affect the phase $k r_i$ at each point.
@@ -91,11 +98,17 @@ $h(x, y, t) = A \left[ \cos(k r_1 - \omega t) + \cos(k r_2 - \omega t) + \cos(k 
 
 *Notes*: Let’s understand what creates the interference pattern:
 - **Constructive Interference**: Occurs when the waves are in phase, meaning the phase difference $k (r_i - r_j)$ between any two waves is a multiple of $2\pi$. This happens when the path difference $r_i - r_j$ is a multiple of the wavelength $\lambda$ (since $k = \frac{2\pi}{\lambda}$, so $k (r_i - r_j) = 2\pi \frac{r_i - r_j}{\lambda}$). The waves add up, making the displacement larger.
+
+
 - **Destructive Interference**: Occurs when the waves are out of phase by $\pi$ (180 degrees), so the phase difference $k (r_i - r_j) = (2n+1)\pi$. This happens when the path difference is an odd multiple of $\lambda/2$. The waves cancel out, making the displacement zero.
+
+
 
 *Notes*: The pattern will be symmetric because the square is symmetric. We expect:
 - High displacement (constructive) where the distances from the sources allow the waves to align.
 - Low or zero displacement (destructive) where the waves cancel out.
+
+
 
 ## 7. Step 6: Visualization with Python
 
