@@ -169,6 +169,8 @@ for i, v in enumerate(velocities):
     print(f"  Specific Energy: {epsilon:.2e} J/kg")
     print(f"  Trajectory: {'Elliptical' if epsilon < 0 else 'Parabolic' if abs(epsilon) < 1e3 else 'Hyperbolic'}")
 ```
+![alt text](image-2.png)
+
 
 *Notes on Code*:
 - **Setup**: We define Earth’s properties and the payload’s starting position at 400 km altitude.

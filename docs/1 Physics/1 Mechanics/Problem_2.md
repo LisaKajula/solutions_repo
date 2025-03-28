@@ -152,6 +152,8 @@ plt.title('Poincaré Section (Chaotic)')
 plt.tight_layout()
 plt.show()
 ```
+![alt text](image-1.png)
+
 
 *Notes on Code*:
 - **ODE**: Defines the nonlinear equation as a first-order system: $\frac{d\theta}{dt} = \dot{\theta}$, $\frac{d\dot{\theta}}{dt} = -\omega_0^2 \sin\theta - 2\beta \dot{\theta} + A \cos(\omega t)$.
