@@ -172,34 +172,44 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
-<p>Let’s revisit the problem "Trajectories of a Freely Released Payload Near Earth" and provide a fresh solution. I’ll ensure the solution is clear, accurate, and addresses all deliverables, including the analysis of trajectories, numerical simulation, and visualization. The solution will be formatted in Markdown with <code>$</code> for inline equations and <code>$$</code> for block equations, designed to render in Visual Studio Code with the "Markdown+Math" extension. You can copy and paste this directly.</p>
-<hr/>
 <h1 id="trajectories-of-a-freely-released-payload-near-earth">Trajectories of a Freely Released Payload Near Earth</h1>
 <h2 id="1-analysis-of-possible-trajectories">1. Analysis of Possible Trajectories</h2>
 <p><em>Notes</em>: When a payload is released from a moving rocket near Earth, its path depends on its initial position, velocity, and Earth’s gravitational pull. Let’s explore the possible trajectories it might follow.</p>
 <ul>
-<li><strong>Types of Trajectories</strong>: The path of an object under gravity is a conic section, determined by its specific energy:</li>
-<li><strong>Elliptical</strong>: If the payload’s energy is negative, it’s bound to Earth and follows a closed, elliptical orbit (like a satellite). This happens if the speed is less than the escape velocity but enough to orbit.</li>
-<li><strong>Parabolic</strong>: If the energy is exactly zero, the payload just escapes Earth’s gravity, following a parabolic path. This occurs at the escape velocity.</li>
+<li>
+<p><strong>Types of Trajectories</strong>: The path of an object under gravity is a conic section, determined by its specific energy:</p>
+</li>
+<li>
+<p><strong>Elliptical</strong>: If the payload’s energy is negative, it’s bound to Earth and follows a closed, elliptical orbit (like a satellite). This happens if the speed is less than the escape velocity but enough to orbit.</p>
+</li>
+<li>
+<p><strong>Parabolic</strong>: If the energy is exactly zero, the payload just escapes Earth’s gravity, following a parabolic path. This occurs at the escape velocity.</p>
+</li>
 <li>
 <p><strong>Hyperbolic</strong>: If the energy is positive, the payload has excess speed and escapes Earth on a hyperbolic path, never returning. This happens if the speed exceeds the escape velocity.</p>
 </li>
 <li>
 <p><strong>Key Factors</strong>:</p>
 </li>
-<li><strong>Initial Position</strong>: The altitude and distance from Earth’s center affect the gravitational force.</li>
-<li><strong>Initial Velocity</strong>: The speed and direction determine the trajectory type.</li>
-<li><strong>Earth’s Gravity</strong>: Acts as the central force, following Newton’s law of gravitation.</li>
+<li>
+<p><strong>Initial Position</strong>: The altitude and distance from Earth’s center affect the gravitational force.</p>
+</li>
+<li>
+<p><strong>Initial Velocity</strong>: The speed and direction determine the trajectory type.</p>
+</li>
+<li>
+<p><strong>Earth’s Gravity</strong>: Acts as the central force, following Newton’s law of gravitation.</p>
+</li>
 </ul>
 <p><em>Notes</em>: To classify the trajectory, we need to compute the specific energy and compare the payload’s speed to the local escape velocity.</p>
 <h2 id="2-mathematical-derivation-of-trajectories">2. Mathematical Derivation of Trajectories</h2>
 <p><em>Notes</em>: Let’s set up the equations to determine the payload’s path using gravitational principles.</p>
 <ul>
-<li>
-<p><strong>Newton’s Law of Gravitation</strong>: The force on the payload (mass <span class="arithmatex">\(m\)</span>) at distance <span class="arithmatex">\(r\)</span> from Earth’s center (mass <span class="arithmatex">\(M\)</span>) is:
-  <span class="arithmatex">\(<span class="arithmatex">\(F = \frac{G M m}{r^2}\)</span>\)</span>
+<li><strong>Newton’s Law of Gravitation</strong>: The force on the payload (mass <span class="arithmatex">\(m\)</span>) at distance <span class="arithmatex">\(r\)</span> from Earth’s center (mass <span class="arithmatex">\(M\)</span>) is:</li>
+</ul>
+<p><span class="arithmatex">\(<span class="arithmatex">\(F = \frac{G M m}{r^2}\)</span>\)</span>
   where <span class="arithmatex">\(G\)</span> is the gravitational constant.</p>
-</li>
+<ul>
 <li>
 <p><strong>Equations of Motion</strong>: In a 2D plane (for simplicity), use Cartesian coordinates <span class="arithmatex">\((x, y)\)</span> with Earth at the origin. The acceleration due to gravity is:
   <span class="arithmatex">\(<span class="arithmatex">\(a_x = -\frac{G M x}{r^3}, \quad a_y = -\frac{G M y}{r^3}, \quad r = \sqrt{x^2 + y^2}\)</span>\)</span>
@@ -209,10 +219,16 @@
 <li>
 <p><strong>Specific Energy</strong>: To classify the trajectory, compute the specific energy <span class="arithmatex">\(\epsilon\)</span> (energy per unit mass):</p>
 </li>
-<li>Kinetic energy per unit mass: <span class="arithmatex">\(\frac{1}{2} v^2\)</span>, where <span class="arithmatex">\(v = \sqrt{v_x^2 + v_y^2}\)</span>.</li>
-<li>Potential energy per unit mass: <span class="arithmatex">\(-\frac{G M}{r}\)</span>.</li>
-<li>Total specific energy:
-    <span class="arithmatex">\(<span class="arithmatex">\(\epsilon = \frac{1}{2} v^2 - \frac{G M}{r}\)</span>\)</span></li>
+<li>
+<p>Kinetic energy per unit mass: <span class="arithmatex">\(\frac{1}{2} v^2\)</span>, where <span class="arithmatex">\(v = \sqrt{v_x^2 + v_y^2}\)</span>.</p>
+</li>
+<li>
+<p>Potential energy per unit mass: <span class="arithmatex">\(-\frac{G M}{r}\)</span>.</p>
+</li>
+<li>
+<p>Total specific energy:
+    <span class="arithmatex">\(<span class="arithmatex">\(\epsilon = \frac{1}{2} v^2 - \frac{G M}{r}\)</span>\)</span></p>
+</li>
 <li>
 <p>Trajectory type:</p>
 <ul>
@@ -228,19 +244,37 @@
 </ul>
 <p><em>Notes</em>: We’ll use these equations to simulate the payload’s path numerically, since analytical solutions are complex for most initial conditions.</p>
 <h2 id="3-numerical-analysis-setup">3. Numerical Analysis Setup</h2>
-<p><em>Notes</em>: Let’s define the initial conditions for the payload:
-- <strong>Altitude</strong>: Released at 400 km above Earth’s surface (typical for low Earth orbit, like the ISS).
-  - Earth’s radius: <span class="arithmatex">\(R = 6,371\)</span> km.
-  - Distance from Earth’s center: <span class="arithmatex">\(r = 6,371 + 400 = 6,771\)</span> km = <span class="arithmatex">\(6.771 \times 10^6\)</span> m.
-- <strong>Position</strong>: Start at <span class="arithmatex">\((x, y) = (6.771 \times 10^6, 0)\)</span> m (along the x-axis).
-- <strong>Velocity</strong>: Test three cases to get different trajectories:
-  - <strong>Elliptical</strong>: Speed less than escape velocity, tangential (circular orbit speed).
-  - <strong>Parabolic</strong>: Speed equal to escape velocity, tangential.
-  - <strong>Hyperbolic</strong>: Speed greater than escape velocity, tangential.
-- <strong>Earth’s Data</strong>:
-  - Mass: <span class="arithmatex">\(M = 5.972 \times 10^{24}\)</span> kg.
-  - <span class="arithmatex">\(G = 6.6743 \times 10^{-11}\)</span> m³/kg·s².</p>
+<p><em>Notes</em>: Let’s define the initial conditions for the payload:</p>
 <ul>
+<li>
+<p><strong>Altitude</strong>: Released at 400 km above Earth’s surface (typical for low Earth orbit, like the ISS).</p>
+</li>
+<li>
+<p>Earth’s radius: <span class="arithmatex">\(R = 6,371\)</span> km.</p>
+</li>
+<li>Distance from Earth’s center: <span class="arithmatex">\(r = 6,371 + 400 = 6,771\)</span> km = <span class="arithmatex">\(6.771 \times 10^6\)</span> m.</li>
+<li>
+<p><strong>Position</strong>: Start at <span class="arithmatex">\((x, y) = (6.771 \times 10^6, 0)\)</span> m (along the x-axis).</p>
+</li>
+<li>
+<p><strong>Velocity</strong>: Test three cases to get different trajectories:</p>
+</li>
+<li>
+<p><strong>Elliptical</strong>: Speed less than escape velocity, tangential (circular orbit speed).</p>
+</li>
+<li>
+<p><strong>Parabolic</strong>: Speed equal to escape velocity, tangential.</p>
+</li>
+<li>
+<p><strong>Hyperbolic</strong>: Speed greater than escape velocity, tangential.</p>
+</li>
+<li>
+<p><strong>Earth’s Data</strong>:</p>
+</li>
+<li>Mass: <span class="arithmatex">\(M = 5.972 \times 10^{24}\)</span> kg.</li>
+<li>
+<p><span class="arithmatex">\(G = 6.6743 \times 10^{-11}\)</span> m³/kg·s².</p>
+</li>
 <li>
 <p><strong>Local Escape Velocity</strong>:
   <span class="arithmatex">\(<span class="arithmatex">\(v_{\text{esc}} = \sqrt{\frac{2 \times 6.6743 \times 10^{-11} \times 5.972 \times 10^{24}}{6.771 \times 10^6}}\)</span>\)</span>
