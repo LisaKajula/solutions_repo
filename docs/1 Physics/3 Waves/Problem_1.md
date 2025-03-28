@@ -63,10 +63,15 @@ Let’s set $a = 1$ meter, so the vertices are at $(1, 1)$, $(1, -1)$, $(-1, -1)
 ## 5. Step 4: Superposition of Waves
 
 *Notes*: The total displacement at any point $(x, y)$ and time $t$ is the sum of the displacements from all sources (principle of superposition):
-$$h(x, y, t) = \sum_{i=1}^N h_i(x, y, t)$$
+
+$h(x, y, t) = \sum_{i=1}^N h_i(x, y, t)$
+
 For our four sources:
-$$h(x, y, t) = h_1 + h_2 + h_3 + h_4$$
-$$h(x, y, t) = A \left[ \cos(k r_1 - \omega t) + \cos(k r_2 - \omega t) + \cos(k r_3 - \omega t) + \cos(k r_4 - \omega t) \right]$$
+$h(x, y, t) = h_1 + h_2 + h_3 + h_4$
+
+
+$h(x, y, t) = A \left[ \cos(k r_1 - \omega t) + \cos(k r_2 - \omega t) + \cos(k r_3 - \omega t) + \cos(k r_4 - \omega t) \right]$
+
 
 *Notes*: This equation gives the combined wave displacement. The interference pattern depends on the differences in $r_i$, which affect the phase $k r_i$ at each point.
 
