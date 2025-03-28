@@ -42,14 +42,16 @@
 
 - **Newton’s Law of Gravitation**: The force on the payload (mass $m$) at distance $r$ from Earth’s center (mass $M$) is:
 
-  $$F = \frac{G M m}{r^2}$$
+  $F = \frac{G M m}{r^2}$
   where $G$ is the gravitational constant.
 
 
 - **Equations of Motion**: In a 2D plane (for simplicity), use Cartesian coordinates $(x, y)$ with Earth at the origin. The acceleration due to gravity is:
-  $$a_x = -\frac{G M x}{r^3}, \quad a_y = -\frac{G M y}{r^3}, \quad r = \sqrt{x^2 + y^2}$$
+
+  $a_x = -\frac{G M x}{r^3}, \quad a_y = -\frac{G M y}{r^3}, \quad r = \sqrt{x^2 + y^2}$
+
   This gives the second-order differential equations:
-  $$\frac{d^2 x}{dt^2} = -\frac{G M x}{(x^2 + y^2)^{3/2}}, \quad \frac{d^2 y}{dt^2} = -\frac{G M y}{(x^2 + y^2)^{3/2}}$$
+  $\frac{d^2 x}{dt^2} = -\frac{G M x}{(x^2 + y^2)^{3/2}}, \quad \frac{d^2 y}{dt^2} = -\frac{G M y}{(x^2 + y^2)^{3/2}}$
   
 
 - **Specific Energy**: To classify the trajectory, compute the specific energy $\epsilon$ (energy per unit mass):
@@ -59,7 +61,7 @@
   - Potential energy per unit mass: $-\frac{G M}{r}$.
 
   - Total specific energy:
-    $$\epsilon = \frac{1}{2} v^2 - \frac{G M}{r}$$
+    $\epsilon = \frac{1}{2} v^2 - \frac{G M}{r}$
 
 
   - Trajectory type:
@@ -68,7 +70,7 @@
     - $\epsilon > 0$: Hyperbolic (escapes).
 
 - **Escape Velocity**: At distance $r$, the escape velocity is the speed where $\epsilon = 0$:
-  $$\frac{1}{2} v_{\text{esc}}^2 - \frac{G M}{r} = 0 \implies v_{\text{esc}} = \sqrt{\frac{2 G M}{r}}$$
+  $\frac{1}{2} v_{\text{esc}}^2 - \frac{G M}{r} = 0 \implies v_{\text{esc}} = \sqrt{\frac{2 G M}{r}}$
 
 
 
@@ -103,15 +105,24 @@
   - $G = 6.6743 \times 10^{-11}$ m³/kg·s².
 
 - **Local Escape Velocity**:
-  $$v_{\text{esc}} = \sqrt{\frac{2 \times 6.6743 \times 10^{-11} \times 5.972 \times 10^{24}}{6.771 \times 10^6}}$$
+  $v_{\text{esc}} = \sqrt{\frac{2 \times 6.6743 \times 10^{-11} \times 5.972 \times 10^{24}}{6.771 \times 10^6}}$
+
+
   Numerator: $2 \times 6.6743 \times 10^{-11} \times 5.972 \times 10^{24} = 7.978 \times 10^{14}$
   Fraction: $\frac{7.978 \times 10^{14}}{6.771 \times 10^6} \approx 1.178 \times 10^8$
+
   Square root: $v_{\text{esc}} = \sqrt{1.178 \times 10^8} \approx 10,853$ m/s = 10.85 km/s.
 
 - **Circular Orbit Velocity** (first cosmic velocity at this altitude):
-  $$v_{\text{circ}} = \sqrt{\frac{6.6743 \times 10^{-11} \times 5.972 \times 10^{24}}{6.771 \times 10^6}}$$
+  $v_{\text{circ}} = \sqrt{\frac{6.6743 \times 10^{-11} \times 5.972 \times 10^{24}}{6.771 \times 10^6}}$
+
+
   Numerator: $6.6743 \times 10^{-11} \times 5.972 \times 10^{24} = 3.989 \times 10^{14}$
+
+
   Fraction: $\frac{3.989 \times 10^{14}}{6.771 \times 10^6} \approx 5.892 \times 10^7$
+
+
   Square root: $v_{\text{circ}} = \sqrt{5.892 \times 10^7} \approx 7,676$ m/s = 7.68 km/s.
 
 *Notes*: We’ll simulate with speeds of 7.68 km/s (elliptical), 10.85 km/s (parabolic), and 12 km/s (hyperbolic), all in the y-direction (tangential).
@@ -192,17 +203,28 @@ for i, v in enumerate(velocities):
 ```
 ![alt text](image-1.png)
 *Notes on Code*:
+
+
 - **Setup**: Defines Earth’s properties and initial conditions at 400 km altitude.
+
 - **Velocities**: Tests three speeds: circular (elliptical), escape (parabolic), and above escape (hyperbolic).
+
+
 - **Simulation**: Uses `odeint` to solve the differential equations numerically.
+
 - **Plot**: Shows Earth as a circle and the payload’s path for each case.
+
 - **Energy Check**: Computes specific energy to confirm trajectory types.
 
 ## 5. Relation to Space Scenarios
 
 *Notes*:
 - **Orbital Insertion**: The elliptical trajectory (v = 7.68 km/s) represents a payload entering a stable orbit, like deploying a satellite. This speed matches the first cosmic velocity at that altitude.
+
+
 - **Reentry**: If the speed is too low (below circular velocity), the trajectory would dip into the atmosphere, leading to reentry (not simulated here due to no air resistance).
+
+
 - **Escape**: The parabolic (v = 10.85 km/s) and hyperbolic (v = 12 km/s) trajectories show the payload escaping Earth, relevant for missions to the Moon or beyond.
 
 *Notes*: These trajectories are key for planning space missions, ensuring payloads reach their intended orbits or destinations.
@@ -211,7 +233,9 @@ for i, v in enumerate(velocities):
 
 *Notes*:
 - **Air Resistance**: Including drag would affect reentry trajectories, slowing the payload and heating it up.
+
 - **Earth’s Rotation**: The planet’s spin adds an initial velocity, slightly altering the required speeds.
+
 - **Other Forces**: Solar radiation or other planets’ gravity could perturb the path in real missions.
 
 *Notes*: This simulation provides a foundation for understanding payload motion, critical for satellite deployment and interplanetary travel.
