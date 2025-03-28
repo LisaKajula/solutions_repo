@@ -175,7 +175,9 @@
 <h1 id="interference-patterns-on-a-water-surface">Interference Patterns on a Water Surface</h1>
 <h2 id="1-problem-setup-and-wave-equation">1. Problem Setup and Wave Equation</h2>
 <p><em>Notes</em>: We’re tasked with analyzing the interference patterns created by circular waves on a water surface, emitted from point sources at the vertices of a regular polygon. Let’s break this down step by step.</p>
-<p>The wave from a single point source at position <span class="arithmatex">\((x_s, y_s)\)</span> is given by the Single Disturbance equation:</p>
+<p>The wave from a single point source at position
+ <span class="arithmatex">\((x_s, y_s)\)</span> 
+ is given by the Single Disturbance equation:</p>
 <p><span class="arithmatex">\(h(x, y, t) = A \cos(k r - \omega t + \phi)\)</span></p>
 <p>where:</p>
 <ul>
@@ -220,23 +222,23 @@
 <ul>
 <li>
 <p><strong>Source 1</strong> at <span class="arithmatex">\((1, 1)\)</span>:
-  <span class="arithmatex">\(<span class="arithmatex">\(r_1 = \sqrt{(x - 1)^2 + (y - 1)^2}\)</span>\)</span>
-<span class="arithmatex">\(<span class="arithmatex">\(h_1(x, y, t) = A \cos(k r_1 - \omega t)\)</span>\)</span></p>
+  <span class="arithmatex">\(r_1 = \sqrt{(x - 1)^2 + (y - 1)^2}\)</span>
+<span class="arithmatex">\(h_1(x, y, t) = A \cos(k r_1 - \omega t)\)</span></p>
 </li>
 <li>
 <p><strong>Source 2</strong> at <span class="arithmatex">\((1, -1)\)</span>:
-  <span class="arithmatex">\(<span class="arithmatex">\(r_2 = \sqrt{(x - 1)^2 + (y + 1)^2}\)</span>\)</span>
-<span class="arithmatex">\(<span class="arithmatex">\(h_2(x, y, t) = A \cos(k r_2 - \omega t)\)</span>\)</span></p>
+  <span class="arithmatex">\(r_2 = \sqrt{(x - 1)^2 + (y + 1)^2}\)</span>
+<span class="arithmatex">\(h_2(x, y, t) = A \cos(k r_2 - \omega t)\)</span></p>
 </li>
 <li>
 <p><strong>Source 3</strong> at <span class="arithmatex">\((-1, -1)\)</span>:
-  <span class="arithmatex">\(<span class="arithmatex">\(r_3 = \sqrt{(x + 1)^2 + (y + 1)^2}\)</span>\)</span>
-<span class="arithmatex">\(<span class="arithmatex">\(h_3(x, y, t) = A \cos(k r_3 - \omega t)\)</span>\)</span></p>
+  <span class="arithmatex">\(r_3 = \sqrt{(x + 1)^2 + (y + 1)^2}\)</span>
+<span class="arithmatex">\(h_3(x, y, t) = A \cos(k r_3 - \omega t)\)</span></p>
 </li>
 <li>
 <p><strong>Source 4</strong> at <span class="arithmatex">\((-1, 1)\)</span>:
-  <span class="arithmatex">\(<span class="arithmatex">\(r_4 = \sqrt{(x + 1)^2 + (y - 1)^2}\)</span>\)</span>
-<span class="arithmatex">\(<span class="arithmatex">\(h_4(x, y, t) = A \cos(k r_4 - \omega t)\)</span>\)</span></p>
+  <span class="arithmatex">\(r_4 = \sqrt{(x + 1)^2 + (y - 1)^2}\)</span>
+<span class="arithmatex">\(h_4(x, y, t) = A \cos(k r_4 - \omega t)\)</span></p>
 </li>
 </ul>
 <p><em>Notes</em>: All waves have the same amplitude <span class="arithmatex">\(A\)</span>, wave number <span class="arithmatex">\(k\)</span>, and angular frequency <span class="arithmatex">\(\omega\)</span>, since the sources are identical and coherent.</p>
@@ -249,8 +251,10 @@
 <p><em>Notes</em>: This equation gives the combined wave displacement. The interference pattern depends on the differences in <span class="arithmatex">\(r_i\)</span>, which affect the phase <span class="arithmatex">\(k r_i\)</span> at each point.</p>
 <h2 id="6-step-5-analyze-interference-patterns">6. Step 5: Analyze Interference Patterns</h2>
 <p><em>Notes</em>: Let’s understand what creates the interference pattern:
-- <strong>Constructive Interference</strong>: Occurs when the waves are in phase, meaning the phase difference <span class="arithmatex">\(k (r_i - r_j)\)</span> between any two waves is a multiple of <span class="arithmatex">\(2\pi\)</span>. This happens when the path difference <span class="arithmatex">\(r_i - r_j\)</span> is a multiple of the wavelength <span class="arithmatex">\(\lambda\)</span> (since <span class="arithmatex">\(k = \frac{2\pi}{\lambda}\)</span>, so <span class="arithmatex">\(k (r_i - r_j) = 2\pi \frac{r_i - r_j}{\lambda}\)</span>). The waves add up, making the displacement larger.
-- <strong>Destructive Interference</strong>: Occurs when the waves are out of phase by <span class="arithmatex">\(\pi\)</span> (180 degrees), so the phase difference <span class="arithmatex">\(k (r_i - r_j) = (2n+1)\pi\)</span>. This happens when the path difference is an odd multiple of <span class="arithmatex">\(\lambda/2\)</span>. The waves cancel out, making the displacement zero.</p>
+- <strong>Constructive Interference</strong>: Occurs when the waves are in phase, meaning the phase difference <span class="arithmatex">\(k (r_i - r_j)\)</span> between any two waves is a multiple of <span class="arithmatex">\(2\pi\)</span>. This happens when the path difference <span class="arithmatex">\(r_i - r_j\)</span> is a multiple of the wavelength <span class="arithmatex">\(\lambda\)</span> (since <span class="arithmatex">\(k = \frac{2\pi}{\lambda}\)</span>, so <span class="arithmatex">\(k (r_i - r_j) = 2\pi \frac{r_i - r_j}{\lambda}\)</span>). The waves add up, making the displacement larger.</p>
+<ul>
+<li><strong>Destructive Interference</strong>: Occurs when the waves are out of phase by <span class="arithmatex">\(\pi\)</span> (180 degrees), so the phase difference <span class="arithmatex">\(k (r_i - r_j) = (2n+1)\pi\)</span>. This happens when the path difference is an odd multiple of <span class="arithmatex">\(\lambda/2\)</span>. The waves cancel out, making the displacement zero.</li>
+</ul>
 <p><em>Notes</em>: The pattern will be symmetric because the square is symmetric. We expect:
 - High displacement (constructive) where the distances from the sources allow the waves to align.
 - Low or zero displacement (destructive) where the waves cancel out.</p>
