@@ -7,13 +7,23 @@
 *Notes*: We’re tasked with analyzing the interference patterns created by circular waves on a water surface, emitted from point sources at the vertices of a regular polygon. Let’s break this down step by step.
 
 The wave from a single point source at position $(x_s, y_s)$ is given by the Single Disturbance equation:
-$$h(x, y, t) = A \cos(k r - \omega t + \phi)$$
+
+
+$h(x, y, t) = A \cos(k r - \omega t + \phi)$
+
 where:
+
+
 - $h(x, y, t)$ is the displacement of the water surface at point $(x, y)$ and time $t$,
+
 - $A$ is the amplitude of the wave,
+
 - $k = \frac{2\pi}{\lambda}$ is the wave number, with $\lambda$ being the wavelength,
+
 - $\omega = 2\pi f$ is the angular frequency, with $f$ being the frequency,
+
 - $r = \sqrt{(x - x_s)^2 + (y - y_s)^2}$ is the distance from the source to the point $(x, y)$,
+
 - $\phi$ is the initial phase.
 
 *Notes*: We’re told the waves are coherent (constant phase difference), so we’ll assume $\phi = 0$ for simplicity, and all sources have the same $A$, $\lambda$, and $f$.
@@ -33,6 +43,8 @@ Let’s set $a = 1$ meter, so the vertices are at $(1, 1)$, $(1, -1)$, $(-1, -1)
 ## 3. Step 2: Position the Sources
 
 *Notes*: We place a point wave source at each vertex of the square:
+
+
 - Source 1 at $(1, 1)$
 - Source 2 at $(1, -1)$
 - Source 3 at $(-1, -1)$
