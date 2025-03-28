@@ -1,7 +1,4 @@
 # Problem 1
-Below is a complete solution for "Interference Patterns on a Water Surface," formatted in Markdown with `$` for inline equations and `$$` for block equations. I’ve included detailed notes to explain each step clearly, ensuring the derivations, analysis, and visualizations are easy to understand. This addresses all deliverables and is designed to render in Visual Studio Code with the "Markdown+Math" extension, including a Python script for simulations. You can copy and paste this directly.
-
----
 
 # Interference Patterns on a Water Surface
 
