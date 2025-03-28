@@ -207,15 +207,15 @@
 <ul>
 <li><strong>Newton’s Law of Gravitation</strong>: The force on the payload (mass <span class="arithmatex">\(m\)</span>) at distance <span class="arithmatex">\(r\)</span> from Earth’s center (mass <span class="arithmatex">\(M\)</span>) is:</li>
 </ul>
-<p><span class="arithmatex">\(<span class="arithmatex">\(F = \frac{G M m}{r^2}\)</span>\)</span>
+<p><span class="arithmatex">\(F = \frac{G M m}{r^2}\)</span>
   where <span class="arithmatex">\(G\)</span> is the gravitational constant.</p>
 <ul>
-<li>
-<p><strong>Equations of Motion</strong>: In a 2D plane (for simplicity), use Cartesian coordinates <span class="arithmatex">\((x, y)\)</span> with Earth at the origin. The acceleration due to gravity is:
-  <span class="arithmatex">\(<span class="arithmatex">\(a_x = -\frac{G M x}{r^3}, \quad a_y = -\frac{G M y}{r^3}, \quad r = \sqrt{x^2 + y^2}\)</span>\)</span>
-  This gives the second-order differential equations:
-  <span class="arithmatex">\(<span class="arithmatex">\(\frac{d^2 x}{dt^2} = -\frac{G M x}{(x^2 + y^2)^{3/2}}, \quad \frac{d^2 y}{dt^2} = -\frac{G M y}{(x^2 + y^2)^{3/2}}\)</span>\)</span></p>
-</li>
+<li><strong>Equations of Motion</strong>: In a 2D plane (for simplicity), use Cartesian coordinates <span class="arithmatex">\((x, y)\)</span> with Earth at the origin. The acceleration due to gravity is:</li>
+</ul>
+<p><span class="arithmatex">\(a_x = -\frac{G M x}{r^3}, \quad a_y = -\frac{G M y}{r^3}, \quad r = \sqrt{x^2 + y^2}\)</span></p>
+<p>This gives the second-order differential equations:
+  <span class="arithmatex">\(\frac{d^2 x}{dt^2} = -\frac{G M x}{(x^2 + y^2)^{3/2}}, \quad \frac{d^2 y}{dt^2} = -\frac{G M y}{(x^2 + y^2)^{3/2}}\)</span></p>
+<ul>
 <li>
 <p><strong>Specific Energy</strong>: To classify the trajectory, compute the specific energy <span class="arithmatex">\(\epsilon\)</span> (energy per unit mass):</p>
 </li>
@@ -227,7 +227,7 @@
 </li>
 <li>
 <p>Total specific energy:
-    <span class="arithmatex">\(<span class="arithmatex">\(\epsilon = \frac{1}{2} v^2 - \frac{G M}{r}\)</span>\)</span></p>
+    <span class="arithmatex">\(\epsilon = \frac{1}{2} v^2 - \frac{G M}{r}\)</span></p>
 </li>
 <li>
 <p>Trajectory type:</p>
@@ -239,7 +239,7 @@
 </li>
 <li>
 <p><strong>Escape Velocity</strong>: At distance <span class="arithmatex">\(r\)</span>, the escape velocity is the speed where <span class="arithmatex">\(\epsilon = 0\)</span>:
-  <span class="arithmatex">\(<span class="arithmatex">\(\frac{1}{2} v_{\text{esc}}^2 - \frac{G M}{r} = 0 \implies v_{\text{esc}} = \sqrt{\frac{2 G M}{r}}\)</span>\)</span></p>
+  <span class="arithmatex">\(\frac{1}{2} v_{\text{esc}}^2 - \frac{G M}{r} = 0 \implies v_{\text{esc}} = \sqrt{\frac{2 G M}{r}}\)</span></p>
 </li>
 </ul>
 <p><em>Notes</em>: We’ll use these equations to simulate the payload’s path numerically, since analytical solutions are complex for most initial conditions.</p>
@@ -277,19 +277,19 @@
 </li>
 <li>
 <p><strong>Local Escape Velocity</strong>:
-  <span class="arithmatex">\(<span class="arithmatex">\(v_{\text{esc}} = \sqrt{\frac{2 \times 6.6743 \times 10^{-11} \times 5.972 \times 10^{24}}{6.771 \times 10^6}}\)</span>\)</span>
-  Numerator: <span class="arithmatex">\(2 \times 6.6743 \times 10^{-11} \times 5.972 \times 10^{24} = 7.978 \times 10^{14}\)</span>
-  Fraction: <span class="arithmatex">\(\frac{7.978 \times 10^{14}}{6.771 \times 10^6} \approx 1.178 \times 10^8\)</span>
-  Square root: <span class="arithmatex">\(v_{\text{esc}} = \sqrt{1.178 \times 10^8} \approx 10,853\)</span> m/s = 10.85 km/s.</p>
-</li>
-<li>
-<p><strong>Circular Orbit Velocity</strong> (first cosmic velocity at this altitude):
-  <span class="arithmatex">\(<span class="arithmatex">\(v_{\text{circ}} = \sqrt{\frac{6.6743 \times 10^{-11} \times 5.972 \times 10^{24}}{6.771 \times 10^6}}\)</span>\)</span>
-  Numerator: <span class="arithmatex">\(6.6743 \times 10^{-11} \times 5.972 \times 10^{24} = 3.989 \times 10^{14}\)</span>
-  Fraction: <span class="arithmatex">\(\frac{3.989 \times 10^{14}}{6.771 \times 10^6} \approx 5.892 \times 10^7\)</span>
-  Square root: <span class="arithmatex">\(v_{\text{circ}} = \sqrt{5.892 \times 10^7} \approx 7,676\)</span> m/s = 7.68 km/s.</p>
+  <span class="arithmatex">\(v_{\text{esc}} = \sqrt{\frac{2 \times 6.6743 \times 10^{-11} \times 5.972 \times 10^{24}}{6.771 \times 10^6}}\)</span></p>
 </li>
 </ul>
+<p>Numerator: <span class="arithmatex">\(2 \times 6.6743 \times 10^{-11} \times 5.972 \times 10^{24} = 7.978 \times 10^{14}\)</span>
+  Fraction: <span class="arithmatex">\(\frac{7.978 \times 10^{14}}{6.771 \times 10^6} \approx 1.178 \times 10^8\)</span></p>
+<p>Square root: <span class="arithmatex">\(v_{\text{esc}} = \sqrt{1.178 \times 10^8} \approx 10,853\)</span> m/s = 10.85 km/s.</p>
+<ul>
+<li><strong>Circular Orbit Velocity</strong> (first cosmic velocity at this altitude):
+  <span class="arithmatex">\(v_{\text{circ}} = \sqrt{\frac{6.6743 \times 10^{-11} \times 5.972 \times 10^{24}}{6.771 \times 10^6}}\)</span></li>
+</ul>
+<p>Numerator: <span class="arithmatex">\(6.6743 \times 10^{-11} \times 5.972 \times 10^{24} = 3.989 \times 10^{14}\)</span></p>
+<p>Fraction: <span class="arithmatex">\(\frac{3.989 \times 10^{14}}{6.771 \times 10^6} \approx 5.892 \times 10^7\)</span></p>
+<p>Square root: <span class="arithmatex">\(v_{\text{circ}} = \sqrt{5.892 \times 10^7} \approx 7,676\)</span> m/s = 7.68 km/s.</p>
 <p><em>Notes</em>: We’ll simulate with speeds of 7.68 km/s (elliptical), 10.85 km/s (parabolic), and 12 km/s (hyperbolic), all in the y-direction (tangential).</p>
 <h2 id="4-implementation">4. Implementation</h2>
 <p><em>Notes</em>: We’ll use Python to numerically solve the equations of motion and plot the trajectories.</p>
@@ -363,23 +363,47 @@ for i, v in enumerate(velocities):
     print(f"  Trajectory: {'Elliptical' if epsilon &lt; 0 else 'Parabolic' if abs(epsilon) &lt; 1e3 else 'Hyperbolic'}")
 </code></pre>
 <p><img alt="alt text" src="../image-1.png"/>
-<em>Notes on Code</em>:
-- <strong>Setup</strong>: Defines Earth’s properties and initial conditions at 400 km altitude.
-- <strong>Velocities</strong>: Tests three speeds: circular (elliptical), escape (parabolic), and above escape (hyperbolic).
-- <strong>Simulation</strong>: Uses <code>odeint</code> to solve the differential equations numerically.
-- <strong>Plot</strong>: Shows Earth as a circle and the payload’s path for each case.
-- <strong>Energy Check</strong>: Computes specific energy to confirm trajectory types.</p>
+<em>Notes on Code</em>:</p>
+<ul>
+<li>
+<p><strong>Setup</strong>: Defines Earth’s properties and initial conditions at 400 km altitude.</p>
+</li>
+<li>
+<p><strong>Velocities</strong>: Tests three speeds: circular (elliptical), escape (parabolic), and above escape (hyperbolic).</p>
+</li>
+<li>
+<p><strong>Simulation</strong>: Uses <code>odeint</code> to solve the differential equations numerically.</p>
+</li>
+<li>
+<p><strong>Plot</strong>: Shows Earth as a circle and the payload’s path for each case.</p>
+</li>
+<li>
+<p><strong>Energy Check</strong>: Computes specific energy to confirm trajectory types.</p>
+</li>
+</ul>
 <h2 id="5-relation-to-space-scenarios">5. Relation to Space Scenarios</h2>
 <p><em>Notes</em>:
-- <strong>Orbital Insertion</strong>: The elliptical trajectory (v = 7.68 km/s) represents a payload entering a stable orbit, like deploying a satellite. This speed matches the first cosmic velocity at that altitude.
-- <strong>Reentry</strong>: If the speed is too low (below circular velocity), the trajectory would dip into the atmosphere, leading to reentry (not simulated here due to no air resistance).
-- <strong>Escape</strong>: The parabolic (v = 10.85 km/s) and hyperbolic (v = 12 km/s) trajectories show the payload escaping Earth, relevant for missions to the Moon or beyond.</p>
+- <strong>Orbital Insertion</strong>: The elliptical trajectory (v = 7.68 km/s) represents a payload entering a stable orbit, like deploying a satellite. This speed matches the first cosmic velocity at that altitude.</p>
+<ul>
+<li>
+<p><strong>Reentry</strong>: If the speed is too low (below circular velocity), the trajectory would dip into the atmosphere, leading to reentry (not simulated here due to no air resistance).</p>
+</li>
+<li>
+<p><strong>Escape</strong>: The parabolic (v = 10.85 km/s) and hyperbolic (v = 12 km/s) trajectories show the payload escaping Earth, relevant for missions to the Moon or beyond.</p>
+</li>
+</ul>
 <p><em>Notes</em>: These trajectories are key for planning space missions, ensuring payloads reach their intended orbits or destinations.</p>
 <h2 id="discussion-on-extensions">Discussion on Extensions</h2>
 <p><em>Notes</em>:
-- <strong>Air Resistance</strong>: Including drag would affect reentry trajectories, slowing the payload and heating it up.
-- <strong>Earth’s Rotation</strong>: The planet’s spin adds an initial velocity, slightly altering the required speeds.
-- <strong>Other Forces</strong>: Solar radiation or other planets’ gravity could perturb the path in real missions.</p>
+- <strong>Air Resistance</strong>: Including drag would affect reentry trajectories, slowing the payload and heating it up.</p>
+<ul>
+<li>
+<p><strong>Earth’s Rotation</strong>: The planet’s spin adds an initial velocity, slightly altering the required speeds.</p>
+</li>
+<li>
+<p><strong>Other Forces</strong>: Solar radiation or other planets’ gravity could perturb the path in real missions.</p>
+</li>
+</ul>
 <p><em>Notes</em>: This simulation provides a foundation for understanding payload motion, critical for satellite deployment and interplanetary travel.</p>
 <hr/>
 <h3 id="rendering-and-running-in-vs-code">Rendering and Running in VS Code</h3>
