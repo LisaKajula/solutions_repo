@@ -43,6 +43,7 @@
 - **Newton’s Law of Gravitation**: The force on the payload (mass $m$) at distance $r$ from Earth’s center (mass $M$) is:
 
   $F = \frac{G M m}{r^2}$
+  
   where $G$ is the gravitational constant.
 
 
