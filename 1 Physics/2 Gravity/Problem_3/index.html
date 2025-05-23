@@ -177,8 +177,12 @@
 <h2 id="1-analysis-of-possible-trajectories">1. Analysis of Possible Trajectories</h2>
 <p><em>Notes</em>: When a payload is released from a moving rocket near Earth, its path depends on its starting position, speed, direction, and Earth’s gravity. Let’s explore the possible paths it might take.</p>
 <ul>
-<li><strong>Types of Trajectories</strong>: The path of an object under gravity is a conic section, determined by its energy:</li>
-<li><strong>Elliptical</strong>: If the payload doesn’t have enough energy to escape Earth, it follows a closed, oval-shaped (elliptical) orbit, like a satellite circling Earth.</li>
+<li>
+<p><strong>Types of Trajectories</strong>: The path of an object under gravity is a conic section, determined by its energy:</p>
+</li>
+<li>
+<p><strong>Elliptical</strong>: If the payload doesn’t have enough energy to escape Earth, it follows a closed, oval-shaped (elliptical) orbit, like a satellite circling Earth.</p>
+</li>
 <li><strong>Parabolic</strong>: If the payload has just enough energy to escape, it follows a parabolic path, reaching infinity (far away) with no speed left.</li>
 <li>
 <p><strong>Hyperbolic</strong>: If the payload has extra energy, it escapes Earth on a hyperbolic path, moving away forever with some speed remaining.</p>
@@ -186,92 +190,134 @@
 <li>
 <p><strong>What Affects the Path</strong>:</p>
 </li>
-<li><strong>Starting Position</strong>: How high above Earth and how far from Earth’s center.</li>
-<li><strong>Starting Velocity</strong>: How fast it’s going and in what direction.</li>
-<li><strong>Earth’s Gravity</strong>: Pulls the payload toward the center, shaping its path.</li>
+<li>
+<p><strong>Starting Position</strong>: How high above Earth and how far from Earth’s center.</p>
+</li>
+<li>
+<p><strong>Starting Velocity</strong>: How fast it’s going and in what direction.</p>
+</li>
+<li>
+<p><strong>Earth’s Gravity</strong>: Pulls the payload toward the center, shaping its path.</p>
+</li>
 </ul>
 <p><em>Notes</em>: To determine the trajectory, we’ll calculate the payload’s energy and compare its speed to the escape speed at its position.</p>
 <h2 id="2-mathematical-derivation-of-trajectories">2. Mathematical Derivation of Trajectories</h2>
 <p><em>Notes</em>: Let’s set up the math to describe the payload’s motion using gravity and physics principles.</p>
 <ul>
+<li><strong>Gravity Force</strong>: Earth pulls the payload toward its center. The force on the payload (mass <span class="arithmatex">\(m\)</span>) at distance <span class="arithmatex">\(r\)</span> from Earth’s center (mass <span class="arithmatex">\(M\)</span>) is given by Newton’s law of gravitation:</li>
+</ul>
+<p><span class="arithmatex">\(<span class="arithmatex">\(F = \frac{G M m}{r^2}\)</span>\)</span></p>
+<p>Here, <span class="arithmatex">\(G\)</span> is the gravitational constant.</p>
+<ul>
+<li><strong>Motion Equations</strong>: We’ll use coordinates  </li>
+</ul>
+<p><span class="arithmatex">\((x, y)\)</span> </p>
+<p>in a 2D plane, with Earth at <span class="arithmatex">\((0, 0)\)</span>. The distance 
+  <span class="arithmatex">\(r\)</span> is:</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(r = \sqrt{x^2 + y^2}\)</span>\)</span></p>
+<p>The gravitational force causes acceleration toward the center, split into </p>
+<p><span class="arithmatex">\(x\)</span> and
+   <span class="arithmatex">\(y\)</span> directions:</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(a_x = -\frac{G M x}{r^3}, \quad a_y = -\frac{G M y}{r^3}\)</span>\)</span></p>
+<p>This gives us equations for how <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> change over time:</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(\frac{d^2 x}{dt^2} = -\frac{G M x}
+  {(x^2 + y^2)^{3/2}}, \quad \frac{d^2 y}
+  {dt^2} = -\frac{G M y}{(x^2 + y^2)^{3/2}}\)</span>\)</span></p>
+<ul>
+<li><strong>Energy to Classify the Path</strong>: We can determine the trajectory by calculating the specific energy </li>
+</ul>
+<p><span class="arithmatex">\(\epsilon\)</span>
+ (energy per unit mass):
+  - Speed: <span class="arithmatex">\(v = \sqrt{v_x^2 + v_y^2}\)</span>, where <span class="arithmatex">\(v_x\)</span> and <span class="arithmatex">\(v_y\)</span> are the velocities in the <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> directions.</p>
+<ul>
 <li>
-<p><strong>Gravity Force</strong>: Earth pulls the payload toward its center. The force on the payload (mass <span class="arithmatex">\(m\)</span>) at distance <span class="arithmatex">\(r\)</span> from Earth’s center (mass <span class="arithmatex">\(M\)</span>) is given by Newton’s law of gravitation:
-  <span class="arithmatex">\(<span class="arithmatex">\(F = \frac{G M m}{r^2}\)</span>\)</span>
-  Here, <span class="arithmatex">\(G\)</span> is the gravitational constant.</p>
+<p>Kinetic energy per unit mass: <span class="arithmatex">\(\frac{1}{2} v^2\)</span>.</p>
 </li>
 <li>
-<p><strong>Motion Equations</strong>: We’ll use coordinates <span class="arithmatex">\((x, y)\)</span> in a 2D plane, with Earth at <span class="arithmatex">\((0, 0)\)</span>. The distance <span class="arithmatex">\(r\)</span> is:
-  <span class="arithmatex">\(<span class="arithmatex">\(r = \sqrt{x^2 + y^2}\)</span>\)</span>
-  The gravitational force causes acceleration toward the center, split into <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> directions:
-  <span class="arithmatex">\(<span class="arithmatex">\(a_x = -\frac{G M x}{r^3}, \quad a_y = -\frac{G M y}{r^3}\)</span>\)</span>
-  This gives us equations for how <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> change over time:
-  <span class="arithmatex">\(<span class="arithmatex">\(\frac{d^2 x}{dt^2} = -\frac{G M x}{(x^2 + y^2)^{3/2}}, \quad \frac{d^2 y}{dt^2} = -\frac{G M y}{(x^2 + y^2)^{3/2}}\)</span>\)</span></p>
+<p>Potential energy per unit mass: <span class="arithmatex">\(-\frac{G M}{r}\)</span>.</p>
 </li>
 <li>
-<p><strong>Energy to Classify the Path</strong>: We can determine the trajectory by calculating the specific energy <span class="arithmatex">\(\epsilon\)</span> (energy per unit mass):</p>
+<p>Total specific energy:
+    <span class="arithmatex">\(<span class="arithmatex">\(\epsilon = \frac{1}{2} v^2 - \frac{G M}{r}\)</span>\)</span></p>
 </li>
-<li>Speed: <span class="arithmatex">\(v = \sqrt{v_x^2 + v_y^2}\)</span>, where <span class="arithmatex">\(v_x\)</span> and <span class="arithmatex">\(v_y\)</span> are the velocities in the <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> directions.</li>
-<li>Kinetic energy per unit mass: <span class="arithmatex">\(\frac{1}{2} v^2\)</span>.</li>
-<li>Potential energy per unit mass: <span class="arithmatex">\(-\frac{G M}{r}\)</span>.</li>
-<li>Total specific energy:
-    <span class="arithmatex">\(<span class="arithmatex">\(\epsilon = \frac{1}{2} v^2 - \frac{G M}{r}\)</span>\)</span></li>
 <li>
 <p>Trajectory type:</p>
 <ul>
-<li><span class="arithmatex">\(\epsilon &lt; 0\)</span>: Elliptical (bound orbit).</li>
-<li><span class="arithmatex">\(\epsilon = 0\)</span>: Parabolic (just escapes).</li>
-<li><span class="arithmatex">\(\epsilon &gt; 0\)</span>: Hyperbolic (escapes with extra speed).</li>
+<li>
+<p><span class="arithmatex">\(\epsilon &lt; 0\)</span>: Elliptical (bound orbit).</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\epsilon = 0\)</span>: Parabolic (just escapes).</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\epsilon &gt; 0\)</span>: Hyperbolic (escapes with extra speed).</p>
+</li>
 </ul>
 </li>
 <li>
-<p><strong>Escape Velocity</strong>: The speed needed to just escape (parabolic trajectory) at distance <span class="arithmatex">\(r\)</span> is when <span class="arithmatex">\(\epsilon = 0\)</span>:
-  <span class="arithmatex">\(<span class="arithmatex">\(\frac{1}{2} v_{\text{esc}}^2 - \frac{G M}{r} = 0 \implies v_{\text{esc}} = \sqrt{\frac{2 G M}{r}}\)</span>\)</span></p>
+<p><strong>Escape Velocity</strong>: The speed needed to just escape (parabolic trajectory) at distance</p>
 </li>
 </ul>
+<p><span class="arithmatex">\(r\)</span> is when <span class="arithmatex">\(\epsilon = 0\)</span>:
+  <span class="arithmatex">\(<span class="arithmatex">\(\frac{1}{2} v_{\text{esc}}^2 - \frac{G M}{r} = 0 \implies v_{\text{esc}} = \sqrt{\frac{2 G M}{r}}\)</span>\)</span></p>
 <p><em>Notes</em>: These equations are complex to solve analytically, so we’ll use numerical methods to simulate the payload’s path.</p>
 <h2 id="3-numerical-analysis-setup">3. Numerical Analysis Setup</h2>
 <p><em>Notes</em>: Let’s define the starting conditions for the payload to simulate different trajectories.</p>
 <ul>
 <li><strong>Starting Altitude</strong>: The payload is released 400 km above Earth’s surface, a typical altitude for low Earth orbit (like the International Space Station).</li>
-<li>Earth’s radius: <span class="arithmatex">\(R = 6,371\)</span> km = <span class="arithmatex">\(6.371 \times 10^6\)</span> m.</li>
-<li>Distance from Earth’s center: <span class="arithmatex">\(r = 6,371 + 400 = 6,771\)</span> km = <span class="arithmatex">\(6.771 \times 10^6\)</span> m.</li>
-<li><strong>Starting Position</strong>: We’ll place the payload at <span class="arithmatex">\((x, y) = (6.771 \times 10^6, 0)\)</span> m, meaning it’s 6,771 km along the x-axis from Earth’s center.</li>
-<li><strong>Starting Velocity</strong>: We’ll test three speeds to get different trajectories, all in the y-direction (tangential to Earth’s surface, like an orbit):</li>
-<li><strong>Elliptical</strong>: Speed equal to the circular orbit speed at this altitude.</li>
-<li><strong>Parabolic</strong>: Speed equal to the escape velocity.</li>
-<li><strong>Hyperbolic</strong>: Speed greater than the escape velocity.</li>
-<li><strong>Earth’s Data</strong>:</li>
-<li>Mass: <span class="arithmatex">\(M = 5.972 \times 10^{24}\)</span> kg.</li>
+<li>Earth’s radius:</li>
+</ul>
+<p><span class="arithmatex">\(R = 6,371\)</span> km = <span class="arithmatex">\(6.371 \times 10^6\)</span> m.</p>
+<ul>
+<li>
+<p>Distance from Earth’s center: <span class="arithmatex">\(r = 6,371 + 400 = 6,771\)</span> km = <span class="arithmatex">\(6.771 \times 10^6\)</span> m.</p>
+</li>
+<li>
+<p><strong>Starting Position</strong>: We’ll place the payload at </p>
+</li>
+</ul>
+<p><span class="arithmatex">\((x, y) = (6.771 \times 10^6, 0)\)</span> m, </p>
+<p>meaning it’s 6,771 km along the x-axis from Earth’s center.
+- <strong>Starting Velocity</strong>: We’ll test three speeds to get different trajectories, all in the y-direction (tangential to Earth’s surface, like an orbit):
+  - <strong>Elliptical</strong>: Speed equal to the circular orbit speed at this altitude.
+  - <strong>Parabolic</strong>: Speed equal to the escape velocity.
+  - <strong>Hyperbolic</strong>: Speed greater than the escape velocity.
+- <strong>Earth’s Data</strong>:</p>
+<ul>
+<li>
+<p>Mass: <span class="arithmatex">\(M = 5.972 \times 10^{24}\)</span> kg.</p>
+</li>
 <li>
 <p>Gravitational constant: <span class="arithmatex">\(G = 6.6743 \times 10^{-11}\)</span> m³/kg·s².</p>
 </li>
 <li>
 <p><strong>Local Escape Velocity</strong> (second cosmic velocity at this altitude):
-  The escape velocity at distance <span class="arithmatex">\(r\)</span> is:
-  <span class="arithmatex">\(<span class="arithmatex">\(v_{\text{esc}} = \sqrt{\frac{2 G M}{r}}\)</span>\)</span>
-  Substitute the values:
-  <span class="arithmatex">\(<span class="arithmatex">\(v_{\text{esc}} = \sqrt{\frac{2 \times (6.6743 \times 10^{-11}) \times (5.972 \times 10^{24})}{6.771 \times 10^6}}\)</span>\)</span>
-  Numerator:
-  <span class="arithmatex">\(<span class="arithmatex">\(2 \times 6.6743 \times 10^{-11} \times 5.972 \times 10^{24} = 7.978 \times 10^{14}\)</span>\)</span>
-  Fraction:
-  <span class="arithmatex">\(<span class="arithmatex">\(\frac{7.978 \times 10^{14}}{6.771 \times 10^6} \approx 1.178 \times 10^8\)</span>\)</span>
-  Square root:
-  <span class="arithmatex">\(<span class="arithmatex">\(v_{\text{esc}} = \sqrt{1.178 \times 10^8} \approx 10,853 \, \text{m/s} = 10.85 \, \text{km/s}\)</span>\)</span></p>
-</li>
-<li>
-<p><strong>Circular Orbit Velocity</strong> (first cosmic velocity at this altitude):
-  The speed for a circular orbit at distance <span class="arithmatex">\(r\)</span> is:
-  <span class="arithmatex">\(<span class="arithmatex">\(v_{\text{circ}} = \sqrt{\frac{G M}{r}}\)</span>\)</span>
-  Substitute the values:
-  <span class="arithmatex">\(<span class="arithmatex">\(v_{\text{circ}} = \sqrt{\frac{(6.6743 \times 10^{-11}) \times (5.972 \times 10^{24})}{6.771 \times 10^6}}\)</span>\)</span>
-  Numerator:
-  <span class="arithmatex">\(<span class="arithmatex">\(6.6743 \times 10^{-11} \times 5.972 \times 10^{24} = 3.989 \times 10^{14}\)</span>\)</span>
-  Fraction:
-  <span class="arithmatex">\(<span class="arithmatex">\(\frac{3.989 \times 10^{14}}{6.771 \times 10^6} \approx 5.892 \times 10^7\)</span>\)</span>
-  Square root:
-  <span class="arithmatex">\(<span class="arithmatex">\(v_{\text{circ}} = \sqrt{5.892 \times 10^7} \approx 7,676 \, \text{m/s} = 7.68 \, \text{km/s}\)</span>\)</span></p>
+  The escape velocity at distance <span class="arithmatex">\(r\)</span> is:</p>
 </li>
 </ul>
+<p><span class="arithmatex">\(<span class="arithmatex">\(v_{\text{esc}} = \sqrt{\frac{2 G M}{r}}\)</span>\)</span></p>
+<p>Substitute the values:</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(v_{\text{esc}} = \sqrt{\frac{2 \times (6.6743 \times 10^{-11}) \times (5.972 \times 10^{24})}{6.771 \times 10^6}}\)</span>\)</span></p>
+<p>Numerator:</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(2 \times 6.6743 \times 10^{-11} \times 5.972 \times 10^{24} = 7.978 \times 10^{14}\)</span>\)</span></p>
+<p>Fraction:</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(\frac{7.978 \times 10^{14}}{6.771 \times 10^6} \approx 1.178 \times 10^8\)</span>\)</span></p>
+<p>Square root:</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(v_{\text{esc}} = \sqrt{1.178 \times 10^8} \approx 10,853 \, \text{m/s} = 10.85 \, \text{km/s}\)</span>\)</span></p>
+<ul>
+<li><strong>Circular Orbit Velocity</strong> (first cosmic velocity at this altitude):
+  The speed for a circular orbit at distance </li>
+</ul>
+<p><span class="arithmatex">\(r\)</span> is:
+  <span class="arithmatex">\(<span class="arithmatex">\(v_{\text{circ}} = \sqrt{\frac{G M}{r}}\)</span>\)</span></p>
+<p>Substitute the values:</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(v_{\text{circ}} = \sqrt{\frac{(6.6743 \times 10^{-11}) \times (5.972 \times 10^{24})}{6.771 \times 10^6}}\)</span>\)</span></p>
+<p>Numerator:</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(6.6743 \times 10^{-11} \times 5.972 \times 10^{24} = 3.989 \times 10^{14}\)</span>\)</span></p>
+<p>Fraction:</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(\frac{3.989 \times 10^{14}}{6.771 \times 10^6} \approx 5.892 \times 10^7\)</span>\)</span></p>
+<p>Square root:</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(v_{\text{circ}} = \sqrt{5.892 \times 10^7} \approx 7,676 \, \text{m/s} = 7.68 \, \text{km/s}\)</span>\)</span></p>
 <p><em>Notes</em>: We’ll simulate three trajectories:
 - Elliptical: 7.68 km/s (circular orbit speed).
 - Parabolic: 10.85 km/s (escape speed).
