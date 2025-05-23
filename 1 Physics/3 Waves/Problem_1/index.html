@@ -56,7 +56,7 @@
 <ul>
 <li class="toctree-l2"><a class="reference internal" href="../../2%20Gravity/Problem_1/">Gravity – Problem 1</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../2%20Gravity/Problem_2/">Problem 2</a>
+<li class="toctree-l2"><a class="reference internal" href="../../2%20Gravity/Problem_2/">Problem 2: Escape Velocities and Cosmic Velocities</a>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../2%20Gravity/Problem_3/">Problem 3</a>
 </li>
@@ -196,75 +196,98 @@
 <li>
 <p><span class="arithmatex">\(r = \sqrt{(x - x_s)^2 + (y - y_s)^2}\)</span> is the distance from the source to the point <span class="arithmatex">\((x, y)\)</span>,</p>
 </li>
-<li>
-<p><span class="arithmatex">\(\phi\)</span> is the initial phase.</p>
-</li>
 </ul>
-<p><em>Notes</em>: We’re told the waves are coherent (constant phase difference), so we’ll assume <span class="arithmatex">\(\phi = 0\)</span> for simplicity, and all sources have the same <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(\lambda\)</span>, and <span class="arithmatex">\(f\)</span>.</p>
-<h2 id="2-step-1-select-a-regular-polygon">2. Step 1: Select a Regular Polygon</h2>
-<p><em>Notes</em>: Let’s choose a <strong>square</strong> as our regular polygon, because it has four vertices, making the interference pattern interesting but not overly complex. The vertices of a square centered at the origin with side length <span class="arithmatex">\(2a\)</span> (so the distance from the center to each vertex is </p>
-<p><span class="arithmatex">\(a\sqrt{2}\)</span>) are:
-- Vertex 1: <span class="arithmatex">\((a, a)\)</span>
-- Vertex 2: <span class="arithmatex">\((a, -a)\)</span>
-- Vertex 3: <span class="arithmatex">\((-a, -a)\)</span>
-- Vertex 4: <span class="arithmatex">\((-a, a)\)</span></p>
-<p>Let’s set <span class="arithmatex">\(a = 1\)</span> meter, so the vertices are at <span class="arithmatex">\((1, 1)\)</span>, <span class="arithmatex">\((1, -1)\)</span>, <span class="arithmatex">\((-1, -1)\)</span>, and <span class="arithmatex">\((-1, 1)\)</span>.</p>
-<h2 id="3-step-2-position-the-sources">3. Step 2: Position the Sources</h2>
-<p><em>Notes</em>: We place a point wave source at each vertex of the square:</p>
-<ul>
-<li>Source 1 at <span class="arithmatex">\((1, 1)\)</span></li>
-<li>Source 2 at <span class="arithmatex">\((1, -1)\)</span></li>
-<li>Source 3 at <span class="arithmatex">\((-1, -1)\)</span></li>
-<li>Source 4 at <span class="arithmatex">\((-1, 1)\)</span></li>
-</ul>
-<h2 id="4-step-3-wave-equations-for-each-source">4. Step 3: Wave Equations for Each Source</h2>
-<p><em>Notes</em>: Each source emits a wave of the form <span class="arithmatex">\(h_i(x, y, t) = A \cos(k r_i - \omega t)\)</span>, where <span class="arithmatex">\(r_i\)</span> is the distance from source <span class="arithmatex">\(i\)</span> to point <span class="arithmatex">\((x, y)\)</span>.</p>
-<ul>
-<li>
-<p><strong>Source 1</strong> at <span class="arithmatex">\((1, 1)\)</span>:
-  <span class="arithmatex">\(r_1 = \sqrt{(x - 1)^2 + (y - 1)^2}\)</span>
-<span class="arithmatex">\(h_1(x, y, t) = A \cos(k r_1 - \omega t)\)</span></p>
-</li>
-<li>
-<p><strong>Source 2</strong> at <span class="arithmatex">\((1, -1)\)</span>:
-  <span class="arithmatex">\(r_2 = \sqrt{(x - 1)^2 + (y + 1)^2}\)</span>
-<span class="arithmatex">\(h_2(x, y, t) = A \cos(k r_2 - \omega t)\)</span></p>
-</li>
-<li>
-<p><strong>Source 3</strong> at <span class="arithmatex">\((-1, -1)\)</span>:
-  <span class="arithmatex">\(r_3 = \sqrt{(x + 1)^2 + (y + 1)^2}\)</span>
-<span class="arithmatex">\(h_3(x, y, t) = A \cos(k r_3 - \omega t)\)</span></p>
-</li>
-<li>
-<p><strong>Source 4</strong> at <span class="arithmatex">\((-1, 1)\)</span>:
-  <span class="arithmatex">\(r_4 = \sqrt{(x + 1)^2 + (y - 1)^2}\)</span>
-<span class="arithmatex">\(h_4(x, y, t) = A \cos(k r_4 - \omega t)\)</span></p>
-</li>
-</ul>
-<p><em>Notes</em>: All waves have the same amplitude <span class="arithmatex">\(A\)</span>, wave number <span class="arithmatex">\(k\)</span>, and angular frequency <span class="arithmatex">\(\omega\)</span>, since the sources are identical and coherent.</p>
-<h2 id="5-step-4-superposition-of-waves">5. Step 4: Superposition of Waves</h2>
-<p><em>Notes</em>: The total displacement at any point <span class="arithmatex">\((x, y)\)</span> and time <span class="arithmatex">\(t\)</span> is the sum of the displacements from all sources (principle of superposition):</p>
-<p><span class="arithmatex">\(h(x, y, t) = \sum_{i=1}^N h_i(x, y, t)\)</span></p>
-<p>For our four sources:
-<span class="arithmatex">\(h(x, y, t) = h_1 + h_2 + h_3 + h_4\)</span></p>
-<p><span class="arithmatex">\(h(x, y, t) = A \left[ \cos(k r_1 - \omega t) + \cos(k r_2 - \omega t) + \cos(k r_3 - \omega t) + \cos(k r_4 - \omega t) \right]\)</span></p>
-<p><em>Notes</em>: This equation gives the combined wave displacement. The interference pattern depends on the differences in <span class="arithmatex">\(r_i\)</span>, which affect the phase <span class="arithmatex">\(k r_i\)</span> at each point.</p>
-<h2 id="6-step-5-analyze-interference-patterns">6. Step 5: Analyze Interference Patterns</h2>
-<p><em>Notes</em>: Let’s understand what creates the interference pattern:
-- <strong>Constructive Interference</strong>: Occurs when the waves are in phase, meaning the phase difference <span class="arithmatex">\(k (r_i - r_j)\)</span> between any two waves is a multiple of <span class="arithmatex">\(2\pi\)</span>. This happens when the path difference <span class="arithmatex">\(r_i - r_j\)</span> is a multiple of the wavelength <span class="arithmatex">\(\lambda\)</span> (since <span class="arithmatex">\(k = \frac{2\pi}{\lambda}\)</span>, so <span class="arithmatex">\(k (r_i - r_j) = 2\pi \frac{r_i - r_j}{\lambda}\)</span>). The waves add up, making the displacement larger.</p>
-<ul>
-<li><strong>Destructive Interference</strong>: Occurs when the waves are out of phase by <span class="arithmatex">\(\pi\)</span> (180 degrees), so the phase difference <span class="arithmatex">\(k (r_i - r_j) = (2n+1)\pi\)</span>. This happens when the path difference is an odd multiple of <span class="arithmatex">\(\lambda/2\)</span>. The waves cancel out, making the displacement zero.</li>
-</ul>
-<p><em>Notes</em>: The pattern will be symmetric because the square is symmetric. We expect:
-- High displacement (constructive) where the distances from the sources allow the waves to align.
-- Low or zero displacement (destructive) where the waves cancel out.</p>
-<h2 id="7-step-6-visualization-with-python">7. Step 6: Visualization with Python</h2>
-<p><em>Notes</em>: We’ll use Python to simulate the interference pattern on a 2D grid at a fixed time <span class="arithmatex">\(t\)</span>. Let’s choose some values:
-- Amplitude: <span class="arithmatex">\(A = 1\)</span> m.
-- Wavelength: <span class="arithmatex">\(\lambda = 0.5\)</span> m, so <span class="arithmatex">\(k = \frac{2\pi}{\lambda} = \frac{2\pi}{0.5} \approx 12.566\)</span> rad/m.
-- Frequency: <span class="arithmatex">\(f = 1\)</span> Hz, so <span class="arithmatex">\(\omega = 2\pi f = 2\pi \approx 6.283\)</span> rad/s.
-- Time: <span class="arithmatex">\(t = 0\)</span> s (to see the initial pattern; we can animate later if needed).</p>
+<h1 id="interference-patterns-on-a-water-surface_1">Interference Patterns on a Water Surface</h1>
+<p>Interference occurs when waves from different sources overlap. On a water surface, this can be seen when ripples from various points meet and form patterns—constructive interference where waves reinforce each other, and destructive interference where they cancel out. These visual patterns help us understand wave behavior and interactions in a tangible way.</p>
+<p>A single circular wave on the water surface from a point source is modeled as:</p>
+<div class="arithmatex">\[
+\eta(x, y, t) = \frac{A}{\sqrt{r}} \cdot \cos(kr - \omega t + \phi)
+\]</div>
+<p>Where:<br/>
+- <span class="arithmatex">\( \eta(x, y, t) \)</span> is the displacement of the water surface at point <span class="arithmatex">\( (x, y) \)</span> and time <span class="arithmatex">\( t \)</span>,<br/>
+- <span class="arithmatex">\( A \)</span> is the amplitude of the wave,<br/>
+- <span class="arithmatex">\( r \)</span> is the distance from the source to point <span class="arithmatex">\( (x, y) \)</span>,<br/>
+- <span class="arithmatex">\( k = \frac{2\pi}{\lambda} \)</span> is the wave number,<br/>
+- <span class="arithmatex">\( \omega = 2\pi f \)</span> is the angular frequency,<br/>
+- <span class="arithmatex">\( \phi \)</span> is the phase offset.</p>
+<p>Now, suppose we place point sources at the vertices of a regular polygon (like a square or triangle). Each source emits a wave described by the equation above. The principle of superposition tells us that the total displacement at any point is the sum of displacements from each source:</p>
+<div class="arithmatex">\[
+\eta_{\text{total}}(x, y, t) = \sum_{i=1}^{N} \frac{A}{\sqrt{r_i}} \cdot \cos(k r_i - \omega t + \phi)
+\]</div>
+<p>Where <span class="arithmatex">\( r_i \)</span> is the distance from the <span class="arithmatex">\( i \)</span>-th source to the point <span class="arithmatex">\( (x, y) \)</span>, and <span class="arithmatex">\( N \)</span> is the number of sources.</p>
+<p>This superposition results in a complex interference pattern that depends on the number and position of the sources.</p>
+<p>To visualize this, we can simulate the system using Python. Here's the code:</p>
 <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameters
+A = 1.0  # Amplitude
+wavelength = 1.0
+k = 2 * np.pi / wavelength  # Wave number
+omega = 2 * np.pi  # Angular frequency
+phi = 0  # Phase
+t = 0  # Time snapshot
+
+# Grid
+x = np.linspace(-5, 5, 500)
+y = np.linspace(-5, 5, 500)
+X, Y = np.meshgrid(x, y)
+
+# Define number of sources and polygon radius
+N = 4  # Number of sources (e.g., square)
+radius = 2.5
+angles = np.linspace(0, 2 * np.pi, N, endpoint=False)
+sources = [(radius * np.cos(a), radius * np.sin(a)) for a in angles]
+
+# Initialize displacement
+eta_total = np.zeros_like(X)
+
+# Superpose waves from each source
+for sx, sy in sources:
+    R = np.sqrt((X - sx)**2 + (Y - sy)**2)
+    eta = A / np.sqrt(R + 1e-6) * np.cos(k * R - omega * t + phi)
+    eta_total += eta
+
+# Plot the interference pattern
+plt.figure(figsize=(8, 6))
+plt.contourf(X, Y, eta_total, levels=100, cmap='plasma')
+plt.colorbar(label='Water Surface Displacement')
+plt.title('Water Wave Interference Pattern from Regular Polygon Sources')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.axis('equal')
+plt.show()
+
+
+
+*Notes*: This equation gives the combined wave displacement. The interference pattern depends on the differences in $r_i$, which affect the phase $k r_i$ at each point.
+
+## 6. Step 5: Analyze Interference Patterns
+
+*Notes*: Let’s understand what creates the interference pattern:
+- **Constructive Interference**: Occurs when the waves are in phase, meaning the phase difference $k (r_i - r_j)$ between any two waves is a multiple of $2\pi$. This happens when the path difference $r_i - r_j$ is a multiple of the wavelength $\lambda$ (since $k = \frac{2\pi}{\lambda}$, so $k (r_i - r_j) = 2\pi \frac{r_i - r_j}{\lambda}$). The waves add up, making the displacement larger.
+
+
+- **Destructive Interference**: Occurs when the waves are out of phase by $\pi$ (180 degrees), so the phase difference $k (r_i - r_j) = (2n+1)\pi$. This happens when the path difference is an odd multiple of $\lambda/2$. The waves cancel out, making the displacement zero.
+
+
+
+*Notes*: The pattern will be symmetric because the square is symmetric. We expect:
+- High displacement (constructive) where the distances from the sources allow the waves to align.
+- Low or zero displacement (destructive) where the waves cancel out.
+
+
+
+## 7. Step 6: Visualization with Python
+
+*Notes*: We’ll use Python to simulate the interference pattern on a 2D grid at a fixed time $t$. Let’s choose some values:
+- Amplitude: $A = 1$ m.
+- Wavelength: $\lambda = 0.5$ m, so $k = \frac{2\pi}{\lambda} = \frac{2\pi}{0.5} \approx 12.566$ rad/m.
+- Frequency: $f = 1$ Hz, so $\omega = 2\pi f = 2\pi \approx 6.283$ rad/s.
+- Time: $t = 0$ s (to see the initial pattern; we can animate later if needed).
+
+```python
+import numpy as np
 import matplotlib.pyplot as plt
 
 # Constants
