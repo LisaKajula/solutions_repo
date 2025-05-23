@@ -26,69 +26,77 @@ where:
 
 - $r = \sqrt{(x - x_s)^2 + (y - y_s)^2}$ is the distance from the source to the point $(x, y)$,
 
-- $\phi$ is the initial phase.
+# Interference Patterns on a Water Surface
 
-*Notes*: We’re told the waves are coherent (constant phase difference), so we’ll assume $\phi = 0$ for simplicity, and all sources have the same $A$, $\lambda$, and $f$.
+Interference occurs when waves from different sources overlap. On a water surface, this can be seen when ripples from various points meet and form patterns—constructive interference where waves reinforce each other, and destructive interference where they cancel out. These visual patterns help us understand wave behavior and interactions in a tangible way.
 
-## 2. Step 1: Select a Regular Polygon
+A single circular wave on the water surface from a point source is modeled as:
 
-*Notes*: Let’s choose a **square** as our regular polygon, because it has four vertices, making the interference pattern interesting but not overly complex. The vertices of a square centered at the origin with side length $2a$ (so the distance from the center to each vertex is 
+$$
+\eta(x, y, t) = \frac{A}{\sqrt{r}} \cdot \cos(kr - \omega t + \phi)
+$$
 
-$a\sqrt{2}$) are:
-- Vertex 1: $(a, a)$
-- Vertex 2: $(a, -a)$
-- Vertex 3: $(-a, -a)$
-- Vertex 4: $(-a, a)$
+Where:  
+- \( \eta(x, y, t) \) is the displacement of the water surface at point \( (x, y) \) and time \( t \),  
+- \( A \) is the amplitude of the wave,  
+- \( r \) is the distance from the source to point \( (x, y) \),  
+- \( k = \frac{2\pi}{\lambda} \) is the wave number,  
+- \( \omega = 2\pi f \) is the angular frequency,  
+- \( \phi \) is the phase offset.
 
-Let’s set $a = 1$ meter, so the vertices are at $(1, 1)$, $(1, -1)$, $(-1, -1)$, and $(-1, 1)$.
+Now, suppose we place point sources at the vertices of a regular polygon (like a square or triangle). Each source emits a wave described by the equation above. The principle of superposition tells us that the total displacement at any point is the sum of displacements from each source:
 
-## 3. Step 2: Position the Sources
+$$
+\eta_{\text{total}}(x, y, t) = \sum_{i=1}^{N} \frac{A}{\sqrt{r_i}} \cdot \cos(k r_i - \omega t + \phi)
+$$
 
-*Notes*: We place a point wave source at each vertex of the square:
+Where \( r_i \) is the distance from the \( i \)-th source to the point \( (x, y) \), and \( N \) is the number of sources.
 
+This superposition results in a complex interference pattern that depends on the number and position of the sources.
 
-- Source 1 at $(1, 1)$
-- Source 2 at $(1, -1)$
-- Source 3 at $(-1, -1)$
-- Source 4 at $(-1, 1)$
+To visualize this, we can simulate the system using Python. Here's the code:
 
-## 4. Step 3: Wave Equations for Each Source
+```python
+import numpy as np
+import matplotlib.pyplot as plt
 
-*Notes*: Each source emits a wave of the form $h_i(x, y, t) = A \cos(k r_i - \omega t)$, where $r_i$ is the distance from source $i$ to point $(x, y)$.
+# Parameters
+A = 1.0  # Amplitude
+wavelength = 1.0
+k = 2 * np.pi / wavelength  # Wave number
+omega = 2 * np.pi  # Angular frequency
+phi = 0  # Phase
+t = 0  # Time snapshot
 
-- **Source 1** at $(1, 1)$:
-  $r_1 = \sqrt{(x - 1)^2 + (y - 1)^2}$
-  $h_1(x, y, t) = A \cos(k r_1 - \omega t)$
+# Grid
+x = np.linspace(-5, 5, 500)
+y = np.linspace(-5, 5, 500)
+X, Y = np.meshgrid(x, y)
 
-- **Source 2** at $(1, -1)$:
-  $r_2 = \sqrt{(x - 1)^2 + (y + 1)^2}$
-  $h_2(x, y, t) = A \cos(k r_2 - \omega t)$
+# Define number of sources and polygon radius
+N = 4  # Number of sources (e.g., square)
+radius = 2.5
+angles = np.linspace(0, 2 * np.pi, N, endpoint=False)
+sources = [(radius * np.cos(a), radius * np.sin(a)) for a in angles]
 
-- **Source 3** at $(-1, -1)$:
-  $r_3 = \sqrt{(x + 1)^2 + (y + 1)^2}$
-  $h_3(x, y, t) = A \cos(k r_3 - \omega t)$
+# Initialize displacement
+eta_total = np.zeros_like(X)
 
-- **Source 4** at $(-1, 1)$:
-  $r_4 = \sqrt{(x + 1)^2 + (y - 1)^2}$
-  $h_4(x, y, t) = A \cos(k r_4 - \omega t)$
+# Superpose waves from each source
+for sx, sy in sources:
+    R = np.sqrt((X - sx)**2 + (Y - sy)**2)
+    eta = A / np.sqrt(R + 1e-6) * np.cos(k * R - omega * t + phi)
+    eta_total += eta
 
-*Notes*: All waves have the same amplitude $A$, wave number $k$, and angular frequency $\omega$, since the sources are identical and coherent.
-
-## 5. Step 4: Superposition of Waves
-
-*Notes*: The total displacement at any point $(x, y)$ and time $t$ is the sum of the displacements from all sources (principle of superposition):
-
-
-$h(x, y, t) = \sum_{i=1}^N h_i(x, y, t)$
-
-
-For our four sources:
-$h(x, y, t) = h_1 + h_2 + h_3 + h_4$
-
-
-
-$h(x, y, t) = A \left[ \cos(k r_1 - \omega t) + \cos(k r_2 - \omega t) + \cos(k r_3 - \omega t) + \cos(k r_4 - \omega t) \right]$
-
+# Plot the interference pattern
+plt.figure(figsize=(8, 6))
+plt.contourf(X, Y, eta_total, levels=100, cmap='plasma')
+plt.colorbar(label='Water Surface Displacement')
+plt.title('Water Wave Interference Pattern from Regular Polygon Sources')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.axis('equal')
+plt.show()
 
 
 
