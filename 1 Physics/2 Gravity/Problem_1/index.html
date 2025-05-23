@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>🌌 Gravity – Problem 1 - Physics and Mathematics</title>
+<title>Gravity – Problem 1 - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "\ud83c\udf0c Gravity \u2013 Problem 1";
+        var mkdocs_page_name = "Gravity \u2013 Problem 1";
         var mkdocs_page_input_path = "1 Physics/2 Gravity/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -54,23 +54,9 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">2 Gravity</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">🌌 Gravity – Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Gravity – Problem 1</a>
 <ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="#orbital-period-and-orbital-radius">Orbital Period and Orbital Radius</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#motivation">🧠 Motivation</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#task-overview">🎯 Task Overview</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#theory-keplers-third-law">📘 Theory: Kepler's Third Law</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#implications-for-astronomy">🔬 Implications for Astronomy</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#real-world-examples">🌍 Real-World Examples</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#python-simulation-snippet">💻 Python Simulation Snippet</a>
-</li>
-</ul>
+<li class="toctree-l3"><a class="reference internal" href="#_1">.</a>
 </li>
 </ul>
 </li>
@@ -179,7 +165,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">2 Gravity</li>
-<li class="breadcrumb-item active">🌌 Gravity – Problem 1</li>
+<li class="breadcrumb-item active">Gravity – Problem 1</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -187,97 +173,55 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="gravity-problem-1">🌌 Gravity – Problem 1</h1>
-<h2 id="orbital-period-and-orbital-radius">Orbital Period and Orbital Radius</h2>
+<h1 id="gravity-problem-1">Gravity – Problem 1</h1>
+<p><strong>Orbital Period and Orbital Radius</strong></p>
+<h2 id="_1">.</h2>
+<p><strong>Motivation</strong></p>
+<p>The relationship between the square of the orbital period and the cube of the orbital radius, known as Kepler's Third Law, is a cornerstone of celestial mechanics.</p>
+<p>This simple yet profound law allows scientists to determine planetary motion, understand satellite orbits, and analyze cosmic systems governed by gravity.</p>
 <hr/>
-<h3 id="motivation">🧠 <strong>Motivation</strong></h3>
-<p>The relationship between the square of the orbital period and the cube of the orbital radius, known as <strong>Kepler's Third Law</strong>, is a cornerstone of celestial mechanics.</p>
-<p>This simple yet profound law allows scientists to:
-- Determine planetary motion,
-- Understand satellite orbits,
-- Analyze cosmic systems governed by gravity.</p>
-<hr/>
-<h3 id="task-overview">🎯 <strong>Task Overview</strong></h3>
-<ol>
-<li><strong>Derive</strong> the relationship between the square of the orbital period and the cube of the orbital radius for circular orbits.  </li>
-<li><strong>Discuss</strong> implications for astronomy:</li>
-<li>Estimating planetary masses and distances.</li>
-<li><strong>Analyze</strong> real-world examples:</li>
-<li>Moon-Earth orbit.</li>
-<li>Planetary orbits in the Solar System.</li>
-<li><strong>Implement</strong> a computational simulation to:</li>
-<li>Model circular orbits.</li>
-<li>Verify Kepler’s Third Law.</li>
-</ol>
-<hr/>
-<h3 id="theory-keplers-third-law">📘 <strong>Theory: Kepler's Third Law</strong></h3>
-<p>In Newtonian mechanics, for a body of mass <span class="arithmatex">\( m \)</span> orbiting a larger mass <span class="arithmatex">\( M \)</span> at radius <span class="arithmatex">\( r \)</span>, the centripetal force is provided by gravity:</p>
+<p><strong>Theory</strong></p>
+<p>From Newton's law of gravitation and centripetal force:</p>
 <div class="arithmatex">\[
 \frac{G M m}{r^2} = \frac{m v^2}{r}
 \]</div>
-<p>Where:
-- <span class="arithmatex">\( G \)</span> is the gravitational constant,
-- <span class="arithmatex">\( v \)</span> is orbital velocity.</p>
 <p>Solving for <span class="arithmatex">\( v \)</span>:</p>
 <div class="arithmatex">\[
 v = \sqrt{\frac{G M}{r}}
 \]</div>
-<p>The orbital period <span class="arithmatex">\( T \)</span> is:</p>
+<p>The orbital period <span class="arithmatex">\( T \)</span> is the time taken to complete one orbit:</p>
 <div class="arithmatex">\[
 T = \frac{2\pi r}{v}
 \]</div>
-<p>Substituting for <span class="arithmatex">\( v \)</span>:</p>
+<p>Substituting <span class="arithmatex">\( v \)</span>:</p>
 <div class="arithmatex">\[
-T = 2\pi r \sqrt{\frac{r}{G M}} = 2\pi \sqrt{\frac{r^3}{G M}}
+T = 2\pi \sqrt{\frac{r^3}{G M}}
 \]</div>
 <p>Squaring both sides:</p>
 <div class="arithmatex">\[
 T^2 = \frac{4\pi^2}{G M} \cdot r^3
 \]</div>
-<p>✅ This is <strong>Kepler’s Third Law</strong> in Newtonian form.</p>
+<p>This is Kepler’s Third Law in Newtonian form.</p>
 <hr/>
-<h3 id="implications-for-astronomy">🔬 <strong>Implications for Astronomy</strong></h3>
-<ul>
-<li>Allows calculation of:</li>
-<li>Planetary masses <span class="arithmatex">\( M \)</span> using known orbits.</li>
-<li>Orbital radii from observed periods.</li>
-<li>Used by astronomers and aerospace engineers for:</li>
-<li>Mission planning.</li>
-<li>Satellite deployment.</li>
-<li>Understanding exoplanets.</li>
-</ul>
-<hr/>
-<h3 id="real-world-examples">🌍 <strong>Real-World Examples</strong></h3>
-<h4 id="moon-orbiting-earth">🌕 Moon Orbiting Earth</h4>
-<ul>
-<li>Period: ~27.3 days  </li>
-<li>Radius: ~384,400 km</li>
-</ul>
-<p>Compare observed <span class="arithmatex">\( T^2 \)</span> and <span class="arithmatex">\( r^3 \)</span> to verify the law.</p>
-<h4 id="planets-in-the-solar-system">🪐 Planets in the Solar System</h4>
-<p>Plot <span class="arithmatex">\( T^2 \)</span> vs <span class="arithmatex">\( r^3 \)</span> for:
-- Mercury to Neptune
-- Expect a linear relationship on log-log plot</p>
-<hr/>
-<h3 id="python-simulation-snippet">💻 <strong>Python Simulation Snippet</strong></h3>
-<p>```python
-import numpy as np
-import matplotlib.pyplot as plt</p>
-<p>G = 6.67430e-11  # m^3/kg/s^2
-M = 1.989e30     # Mass of the Sun in kg</p>
-<h1 id="orbital-radii-in-meters-eg-earth-to-mars">Orbital radii in meters (e.g., Earth to Mars)</h1>
-<p>radii = np.array([5.79e10, 1.08e11, 1.50e11, 2.28e11])  # Mercury to Mars</p>
-<h1 id="calculate-periods">Calculate periods</h1>
-<p>periods = 2 * np.pi * np.sqrt(radii**3 / (G * M))</p>
-<h1 id="plotting">Plotting</h1>
-<p>plt.figure(figsize=(8,5))
-plt.plot(radii<strong>3, periods</strong>2, 'o-', label='T² vs R³')
-plt.xlabel('Orbital Radius Cubed (m³)')
-plt.ylabel('Orbital Period Squared (s²)')
-plt.title("Verification of Kepler's Third Law")
-plt.legend()
+<p><strong>Python Simulation</strong></p>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+G = 6.67430e-11      # Gravitational constant (m^3/kg/s^2)
+M = 1.989e30         # Mass of the Sun (kg)
+
+radii = np.array([5.79e10, 1.08e11, 1.50e11, 2.28e11])  # Orbital radii (m)
+periods = 2 * np.pi * np.sqrt(radii**3 / (G * M))       # Periods (s)
+
+plt.figure(figsize=(8,5))
+plt.plot(radii**3, periods**2, 'o-', color='blue')
+plt.xlabel("Orbital Radius Cubed (m³)")
+plt.ylabel("Orbital Period Squared (s²)")
+plt.title("Kepler's Third Law Verification")
 plt.grid(True)
-plt.show()</p>
+plt.show()
+</code></pre>
+<p><img alt="alt text" src="../image-4.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
